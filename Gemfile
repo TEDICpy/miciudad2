@@ -5,7 +5,7 @@ source "https://rubygems.org"
 ruby RUBY_VERSION
 
 gem "decidim", "0.10.0"
-#gem "decidim-initiatives", git: "https://github.com/decidim/decidim-initiatives", branch: "0.10-stable"
+gem "decidim-initiatives", git: "https://github.com/decidim/decidim-initiatives", branch: "a24a1199aa5d723444dfb1d36a5494646f596936"
 gem "decidim-proposals"
 
 gem "puma", "~> 3.0"

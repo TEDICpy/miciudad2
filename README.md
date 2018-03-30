@@ -4,7 +4,28 @@ Aplicación de Participación Ciudadana y Gobierno Abierto
 
 Este es el repositorio de `miciudad2`, basado en [Decidim](https://github.com/decidim/decidim).
 
-## Preparando la aplicación
+
+## Dependencias
+
+* ruby
+* bundler
+* git
+* imagemagick
+* postgresql 
+* nodejs
+
+* decidim-proposals
+* decidim-initiatives
+
+* rails decidim_proposals:install:migrations
+* rails decidim_initiatives:install:migrations
+* rails db:create db:migrate
+* rails db:seed # opcionalmente
+
+## Desarrollo
+
+
+## Preparando la aplicación para producción
 
 Los primeros pasos para desplegar la aplicación
 
@@ -20,3 +41,4 @@ user.save!
 6. Complete el resto del formulario y finalize.
 
 ¡Está listo!
+
