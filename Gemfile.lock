@@ -17,7 +17,7 @@ GIT
 
 GIT
   remote: https://github.com/diegocrzt/decidim-denuncias
-  revision: d4eb21ea1cfb4ff8919db389f0e9d3cfbb8698bf
+  revision: 862765d71d19ba0ed1e9330d1c8765874d20cb98
   branch: linea_base_denuncias
   specs:
     decidim-denuncias (0.10.0.pre)

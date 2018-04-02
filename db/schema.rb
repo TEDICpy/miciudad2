@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180330031358) do
+ActiveRecord::Schema.define(version: 20180402014566) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -268,6 +268,79 @@ ActiveRecord::Schema.define(version: 20180330031358) do
     t.string "reference"
     t.integer "decidim_user_group_id"
     t.index ["decidim_feature_id"], name: "index_decidim_debates_debates_on_decidim_feature_id"
+  end
+
+  create_table "decidim_denuncias", force: :cascade do |t|
+    t.jsonb "title", null: false
+    t.jsonb "description", null: false
+    t.integer "decidim_organization_id"
+    t.bigint "decidim_author_id"
+    t.datetime "published_at"
+    t.integer "state", default: 0, null: false
+    t.integer "signature_type", default: 0, null: false
+    t.date "signature_start_time"
+    t.date "signature_end_time"
+    t.jsonb "answer"
+    t.datetime "answered_at"
+    t.string "answer_url"
+    t.integer "denuncia_votes_count", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "decidim_user_group_id"
+    t.string "hashtag"
+    t.integer "denuncia_supports_count", default: 0, null: false
+    t.integer "scoped_type_id"
+    t.datetime "first_progress_notification_at"
+    t.datetime "second_progress_notification_at"
+    t.integer "offline_votes"
+    t.index "md5((description)::text)", name: "decidim_denuncias_description_search"
+    t.index ["answered_at"], name: "index_decidim_denuncias_on_answered_at"
+    t.index ["decidim_author_id"], name: "index_decidim_denuncias_on_decidim_author_id"
+    t.index ["decidim_organization_id"], name: "index_decidim_denuncias_on_decidim_organization_id"
+    t.index ["published_at"], name: "index_decidim_denuncias_on_published_at"
+    t.index ["title"], name: "decidim_denuncias_title_search"
+  end
+
+  create_table "decidim_denuncias_committee_members", force: :cascade do |t|
+    t.bigint "decidim_denuncias_id"
+    t.bigint "decidim_users_id"
+    t.integer "state", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["decidim_denuncias_id"], name: "index_decidim_committee_members_denuncia"
+    t.index ["decidim_users_id"], name: "index_decidim_committee_members_user_denuncia"
+    t.index ["state"], name: "index_decidim_denuncias_committee_members_on_state"
+  end
+
+  create_table "decidim_denuncias_type_scopes", force: :cascade do |t|
+    t.bigint "decidim_denuncias_types_id"
+    t.bigint "decidim_scopes_id"
+    t.integer "supports_required", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["decidim_denuncias_types_id"], name: "idx_scoped_denuncia_type_type"
+    t.index ["decidim_scopes_id"], name: "idx_scoped_denuncia_type_scope"
+  end
+
+  create_table "decidim_denuncias_types", force: :cascade do |t|
+    t.jsonb "title", null: false
+    t.jsonb "description", null: false
+    t.integer "decidim_organization_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "banner_image"
+    t.index ["decidim_organization_id"], name: "index_decidim_denuncia_types_on_decidim_organization_id"
+  end
+
+  create_table "decidim_denuncias_votes", force: :cascade do |t|
+    t.bigint "decidim_denuncia_id", null: false
+    t.bigint "decidim_author_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "decidim_user_group_id"
+    t.index ["decidim_author_id"], name: "index_decidim_denuncias_votes_on_decidim_author_id"
+    t.index ["decidim_denuncia_id", "decidim_author_id", "decidim_user_group_id"], name: "decidim_denuncias_voutes_author_uniqueness_index", unique: true
+    t.index ["decidim_denuncia_id"], name: "index_decidim_denuncias_votes_on_decidim_denuncia_id"
   end
 
   create_table "decidim_features", id: :serial, force: :cascade do |t|
