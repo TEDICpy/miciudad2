@@ -1,9 +1,9 @@
 GIT
-  remote: https://github.com/decidim/decidim-initiatives
-  revision: a24a1199aa5d723444dfb1d36a5494646f596936
-  branch: a24a1199aa5d723444dfb1d36a5494646f596936
+  remote: https://github.com/TEDICpy/decidim-reclamos
+  revision: 8f7ec70df3800639ebd9f8bdd09ec1ba117cf29f
+  branch: development
   specs:
-    decidim-initiatives (0.10.0.pre)
+    decidim-denuncias (0.10.0.pre)
       decidim-admin
       decidim-comments
       decidim-core (~> 0.10.0.pre)
@@ -16,11 +16,11 @@ GIT
       wicked
 
 GIT
-  remote: https://github.com/diegocrzt/decidim-denuncias
-  revision: 862765d71d19ba0ed1e9330d1c8765874d20cb98
-  branch: linea_base_denuncias
+  remote: https://github.com/decidim/decidim-initiatives
+  revision: a24a1199aa5d723444dfb1d36a5494646f596936
+  branch: a24a1199aa5d723444dfb1d36a5494646f596936
   specs:
-    decidim-denuncias (0.10.0.pre)
+    decidim-initiatives (0.10.0.pre)
       decidim-admin
       decidim-comments
       decidim-core (~> 0.10.0.pre)
@@ -635,7 +635,7 @@ DEPENDENCIES
   web-console (~> 3.5)
 
 RUBY VERSION
-   ruby 2.4.1p111
+   ruby 2.5.1p57
 
 BUNDLED WITH
    1.16.1

@@ -2,7 +2,7 @@
 
 Decidim.configure do |config|
   config.application_name = "Mi Ciudad"
-  config.mailer_sender = "change-me@domain.org"
+  config.mailer_sender = "miciudad@tedic.net"
 
   # Change these lines to set your preferred locales
   config.default_locale = :es
