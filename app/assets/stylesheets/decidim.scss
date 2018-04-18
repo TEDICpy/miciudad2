@@ -2,6 +2,8 @@
 // 
 $primary:#E5E57D;
  $secondary: #495A6C;
+ $verdeClaro2: #ABC17A;
+ $grisLetra: #7A7D85;
 // $success: #57d685;
 // $warning: #ffae00;
 // $alert: #ec5840;
@@ -18,16 +20,19 @@ $primary:#E5E57D;
 @import "decidim/application";
 
 
-.navbar {
-    background: white;
-    color: red;
+
+
+
+
+.home-pam__highlight .home-pam__number {
+    color: $verdeClaro2;
 }
 
-.row.column.topbar {
-    background: white;
-    border-radius: 0px 0px 10px 10px;
+.text-highlight.heading1 {
+    font-weight: 100;
+    font-size: 3em;
+    margin-top: 1em;
 }
-
 
 .main-footer {
     background: #495A6C;
@@ -49,13 +54,66 @@ $primary:#E5E57D;
 }
 
 
+.card--process__small {
+    color: $verdeClaro2;
+    font-weight: bold;
+    strong {
+        display: block;
+        color: $grisLetra;
+        font-weight: normal;
+    }
+}
+
+.home-bullet__desc {
+    text-align: center;
+    float: none;
+}
+
+
+
+.home-bullet__icon {
+    float: none;
+    display: block;
+    text-align: center;
+    /* text-align: right; */
+
+    svg {
+        fill: $secondary;
+        width: 80px;
+        height: 80px;
+    }
+}
+
+.button.hollow {
+    border-color: $secondary;
+    color: $secondary;
+
+}
+
+.home-bullet__icon img {
+    width: 40%;
+    text-align: center;
+    margin-bottom: 19px;
+}
+
+
+
 
 
 
 
 @media print, screen and (min-width: 40em) {
 
-  
+    .navbar {
+        background: white;
+        color: red;
+    }
+    
+
+    .row.column.topbar {
+        background: white;
+        border-radius: 0px 0px 10px 10px;
+    }
     
    
  
@@ -163,6 +221,8 @@ $primary:#E5E57D;
 
     }
 
+
+    .wrapper-home {
     #highlighted-processes {
 
    
@@ -180,6 +240,8 @@ $primary:#E5E57D;
 
         }
     }
+
+}
 
 }
 
