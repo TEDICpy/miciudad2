@@ -18,7 +18,7 @@ Instalar según la plataforma utilizada
 * rvm (opcional, cualquier versión)
 * apache httpd >= 2.4 (sólo para el entorno de producción)
 
-## Desarrollo
+## Creación y configuración de la base de datos
 
 * Crear la cuenta de usuario con permisos de superusuario en la BD (cómo el usuario postgres)
 ```bash
@@ -48,7 +48,7 @@ rails db:seed
 rails server
 ```
 
-## Preparando la aplicación para producción
+## Preparación del entorno de Producción
 
 * Crear o agregar al fichero de environment, las variables de entorno utilizadas por 
 la plataforma en producción, por ejemplo en `/etc/profile.d/miciudad2-env.sh`. O 
@@ -91,7 +91,7 @@ apache httpd, si esté ya está previamente instalado, si no está instale previ
 a2enconf passenger.conf
 ```
 
-* [Opcional para usar en instalaciones de Apache más esotéricas] Obtener el path de la instalación de ruby que se está usando
+* Obtener el path de la instalación de ruby que se está usando
 ```bash
 passenger-config about ruby-command
 ```
@@ -110,7 +110,7 @@ passenger-config was invoked through the following Ruby interpreter:
 Do you want to know which command to use for a different Ruby interpreter? 'rvm use' that Ruby interpreter, then re-run 'passenger-config about ruby-command'.
 ```
 
-En la linea donde se lee  `to use Apache` se encuentra el path para el interprete de ruby a utilizar, en este ejemplo
+En la linea donde se lee  `To use Apache` se encuentra el path para el interprete de ruby a utilizar, en este ejemplo
 `PassengerRuby /usr/local/rvm/gems/ruby-2.4.1/wrappers/ruby`
 
 
@@ -150,13 +150,66 @@ LoadModule passenger_module /usr/local/rvm/gems/ruby-2.4.1/gems/passenger-5.2.2/
 
 ```
 
-* Clonar o copiar el proyecto en el directorio raiz del httpd, cambiar el owner según sea necesario
+## Despliegue del código
+
+Exceptuando los dos primeros pasos, esta sección se debe realizar cada vez 
+que se intente actualizar la aplicación a una versión nueva disponible en 
+github o descargada como empaquetado.
+
+* Clonar o copiar el proyecto en un directorio arbitrario donde el usuario tenga permisos
+ (si no se ha clonado antes) 
 
 ```bash
-cp * 
+git clone https://github.com/TEDICpy/miciudad2.git
+cd miciudad2
 
 ``` 
 
+* O actualizar el código a la última versión (si ya se ha clonado)
+
+```bash
+git pull 
+```
+
+* Instalar/Actualizar dependencias
+
+```bash
+bundle install
+```
+
+* Ejecutar migraciones
+
+```bash
+rails db:migrate
+```
+
+* Precompilar assets
+
+```bash
+rake assets:precompile
+```
+
+* Copiar los ficheros al directorio del servidor apache2 (usar sudo de ser necesario)
+
+```bash
+cp -vrf * /var/www/html/
+```
+
+* [Recomendado] Asegurarse que los ficheros tienen el owner correcto
+```bash
+sudo chown -R www-data:www-data /var/www/html
+``` 
+
+* Reiniciar el servidor apache2
+
+```bash
+service apache2 restart
+```
+
+* Ir a la URL del sitio.
+
+## Configuración Inicial
+ 
 * Abrir la consola de rails en el servidor: `bundle exec rails console`
 * Crear un usuario administrador del sistema:
 ```ruby
