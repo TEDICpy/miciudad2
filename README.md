@@ -15,7 +15,7 @@ Instalar según la plataforma utilizada
 * postgresql >= 9.5 
 * nodejs >= 9.0.0 , < 10.0.0
 * bundler >= 1.16
-* rvm (opcional, cualquier versión)
+* rvm (cualquier versión)
 * apache httpd >= 2.4 (sólo para el entorno de producción)
 
 ## Creación y configuración de la base de datos
@@ -115,7 +115,8 @@ En la linea donde se lee  `To use Apache` se encuentra el path para el interpret
 
 
 * Configurar el módulo de passenger en apache, ubicar el fichero `passenger.conf` por ejemplo
-en y asegurarse que el contenido apunte a la instalació de ruby y passenger utilizados
+en `/etc/apache2/conf-enabled/passenger.conf` y asegurarse que el contenido apunte a la instalació de ruby y passenger utilizados
+
 ```apache
 LoadModule passenger_module /usr/local/rvm/gems/ruby-2.4.1/gems/passenger-5.2.2/buildout/apache2/mod_passenger.so
 <IfModule mod_passenger.c>
@@ -209,6 +210,9 @@ service apache2 restart
 * Ir a la URL del sitio.
 
 ## Configuración Inicial
+
+
+### Crear la cuenta de Administrador del sistema
  
 * Abrir la consola de rails en el servidor: `bundle exec rails console`
 * Crear un usuario administrador del sistema:
@@ -216,10 +220,24 @@ service apache2 restart
 user = Decidim::System::Admin.new(email: <email>, password: <password>, password_confirmation: <password>)
 user.save!
 ```
-* Visitar `<your app url>/system` e iniciar sesión con las credenciales de administrador.
-* Crear una nueva organización. Verificar la configuración de localización que quiera usar para dicha organización y seleccione una por defecto.
-* Definir correctamente el nombre de host por defecto para la organización, de ota manera la aplicación podría no funcionar adecuadamente. Note que necesita inclusir cualquier sub dominio que piense usar. 
-* Complete el resto del formulario y finalize.
+* Visitar `<url>/system` e iniciar sesión con las credenciales de administrador.
+* Crear una nueva organización. Verificar la configuración de localización que quiera usar para dicha organización 
+y seleccione una por defecto.
+* Definir correctamente el nombre de host por defecto para la organización, de ota manera la aplicación podría no 
+funcionar adecuadamente. Note que necesita incluir cualquier sub dominio que piense usar. 
+* Complete el resto del formulario y finalize. Ahora está disponible el sitio para la organización que se acaba de crear.
+Se pueden crear tantas organizaciones como dominios se dispongan, y cada organización tendrá sus propios usuarios.
+* En el contexto de `MiCiudad2` Una organización es equivalente a una municipalidad.
+
+
+### Acceder al sitio de una organización/municipalidad
+
+* Apuntar a la `url` del sistema y si ya se configuró una organización para dicha `url` se podrá ver la pantalla de 
+bienvenida de la aplicación.
+* Todos los usuarios inclusive el administrador del sitio pueden iniciar sesión por medio de la opción `Entra` en la 
+esquina superior derecha de la pantalla
+
+
 
 ¡Está listo!
 
