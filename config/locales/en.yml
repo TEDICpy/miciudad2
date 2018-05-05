@@ -30,4 +30,17 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activemodel:
+    attributes:
+      mail_authorization_handler:
+        verification_code: Verification Code
+  decidim:
+      authorization_handlers:
+        mail_authorization_handler:
+          name: E-mail
+          explanation: Verify your identity with a code sent to your e-mail address
+      verifications:
+            authorizations:
+              first_login:
+                actions:
+                  mail_authorization_handler: Verify yourself writing your e-mail address
