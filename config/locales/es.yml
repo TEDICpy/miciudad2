@@ -17,3 +17,6 @@ es:
           actions:
             mail_authorization_handler: Verifícate escribiendo tu dirección de correo electrónico
             automatic_authorization_handler: Verifícate automáticamente
+    home:
+      highlighted_processes:
+        active_processes: Activos ahora
