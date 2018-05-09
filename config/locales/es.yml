@@ -8,8 +8,12 @@ es:
       mail_authorization_handler:
         name: Correo electrónico
         explanation: Verifica tu identidad con un ćodigo enviado a tu dirección de correo electrónico
+      automatic_authorization_handler:
+              name: Autorización Automática
+              explanation: Verifica tu identidad automáticamente
     verifications:
       authorizations:
         first_login:
           actions:
             mail_authorization_handler: Verifícate escribiendo tu dirección de correo electrónico
+            automatic_authorization_handler: Verifícate automáticamente

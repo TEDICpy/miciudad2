@@ -8,8 +8,8 @@ Decidim.configure do |config|
   config.default_locale = :es
   config.available_locales = [:es, :en]
 
-  # MailAuthorizationHandler
-  config.authorization_handlers = [MailAuthorizationHandler]
+  # Hanlders de autorización para Mi ciudad
+  config.authorization_handlers = [MailAuthorizationHandler, AutomaticAuthorizationHandler]
 
   # Geocoder configuration
   # config.geocoder = {
@@ -49,6 +49,9 @@ end
 
 Decidim::Verifications.register_workflow(:mail_authorization_handler) do |auth|
   auth.form = "MailAuthorizationHandler"
+end
+Decidim::Verifications.register_workflow(:automatic_authorization_handler) do |auth|
+  auth.form = "AutomaticAuthorizationHandler"
 end
 
 Rails.application.config.i18n.available_locales = Decidim.available_locales
