@@ -15,10 +15,10 @@ Instalar según la plataforma utilizada
 * postgresql >= 9.5 
 * nodejs >= 9.0.0 , < 10.0.0
 * bundler >= 1.16
-* rvm (opcional, cualquier versión)
+* rvm (cualquier versión)
 * apache httpd >= 2.4 (sólo para el entorno de producción)
 
-## Desarrollo
+## Creación y configuración de la base de datos
 
 * Crear la cuenta de usuario con permisos de superusuario en la BD (cómo el usuario postgres)
 ```bash
@@ -48,7 +48,7 @@ rails db:seed
 rails server
 ```
 
-## Preparando la aplicación para producción
+## Preparación del entorno de Producción
 
 * Crear o agregar al fichero de environment, las variables de entorno utilizadas por 
 la plataforma en producción, por ejemplo en `/etc/profile.d/miciudad2-env.sh`. O 
@@ -91,7 +91,7 @@ apache httpd, si esté ya está previamente instalado, si no está instale previ
 a2enconf passenger.conf
 ```
 
-* [Opcional para usar en instalaciones de Apache más esotéricas] Obtener el path de la instalación de ruby que se está usando
+* Obtener el path de la instalación de ruby que se está usando
 ```bash
 passenger-config about ruby-command
 ```
@@ -110,12 +110,13 @@ passenger-config was invoked through the following Ruby interpreter:
 Do you want to know which command to use for a different Ruby interpreter? 'rvm use' that Ruby interpreter, then re-run 'passenger-config about ruby-command'.
 ```
 
-En la linea donde se lee  `to use Apache` se encuentra el path para el interprete de ruby a utilizar, en este ejemplo
+En la linea donde se lee  `To use Apache` se encuentra el path para el interprete de ruby a utilizar, en este ejemplo
 `PassengerRuby /usr/local/rvm/gems/ruby-2.4.1/wrappers/ruby`
 
 
 * Configurar el módulo de passenger en apache, ubicar el fichero `passenger.conf` por ejemplo
-en y asegurarse que el contenido apunte a la instalació de ruby y passenger utilizados
+en `/etc/apache2/conf-enabled/passenger.conf` y asegurarse que el contenido apunte a la instalació de ruby y passenger utilizados
+
 ```apache
 LoadModule passenger_module /usr/local/rvm/gems/ruby-2.4.1/gems/passenger-5.2.2/buildout/apache2/mod_passenger.so
 <IfModule mod_passenger.c>
@@ -150,23 +151,93 @@ LoadModule passenger_module /usr/local/rvm/gems/ruby-2.4.1/gems/passenger-5.2.2/
 
 ```
 
-* Clonar o copiar el proyecto en el directorio raiz del httpd, cambiar el owner según sea necesario
+## Despliegue del código
+
+Exceptuando los dos primeros pasos, esta sección se debe realizar cada vez 
+que se intente actualizar la aplicación a una versión nueva disponible en 
+github o descargada como empaquetado.
+
+* Clonar o copiar el proyecto en un directorio arbitrario donde el usuario tenga permisos
+ (si no se ha clonado antes) 
 
 ```bash
-cp * 
+git clone https://github.com/TEDICpy/miciudad2.git
+cd miciudad2
 
 ``` 
 
+* O actualizar el código a la última versión (si ya se ha clonado)
+
+```bash
+git pull 
+```
+
+* Instalar/Actualizar dependencias
+
+```bash
+bundle install
+```
+
+* Ejecutar migraciones
+
+```bash
+rails db:migrate
+```
+
+* Precompilar assets
+
+```bash
+rake assets:precompile
+```
+
+* Copiar los ficheros al directorio del servidor apache2 (usar sudo de ser necesario)
+
+```bash
+cp -vrf * /var/www/html/
+```
+
+* [Recomendado] Asegurarse que los ficheros tienen el owner correcto
+```bash
+sudo chown -R www-data:www-data /var/www/html
+``` 
+
+* Reiniciar el servidor apache2
+
+```bash
+service apache2 restart
+```
+
+* Ir a la URL del sitio.
+
+## Configuración Inicial
+
+
+### Crear la cuenta de Administrador del sistema
+ 
 * Abrir la consola de rails en el servidor: `bundle exec rails console`
 * Crear un usuario administrador del sistema:
 ```ruby
 user = Decidim::System::Admin.new(email: <email>, password: <password>, password_confirmation: <password>)
 user.save!
 ```
-* Visitar `<your app url>/system` e iniciar sesión con las credenciales de administrador.
-* Crear una nueva organización. Verificar la configuración de localización que quiera usar para dicha organización y seleccione una por defecto.
-* Definir correctamente el nombre de host por defecto para la organización, de ota manera la aplicación podría no funcionar adecuadamente. Note que necesita inclusir cualquier sub dominio que piense usar. 
-* Complete el resto del formulario y finalize.
+* Visitar `<url>/system` e iniciar sesión con las credenciales de administrador.
+* Crear una nueva organización. Verificar la configuración de localización que quiera usar para dicha organización 
+y seleccione una por defecto.
+* Definir correctamente el nombre de host por defecto para la organización, de ota manera la aplicación podría no 
+funcionar adecuadamente. Note que necesita incluir cualquier sub dominio que piense usar. 
+* Complete el resto del formulario y finalize. Ahora está disponible el sitio para la organización que se acaba de crear.
+Se pueden crear tantas organizaciones como dominios se dispongan, y cada organización tendrá sus propios usuarios.
+* En el contexto de `MiCiudad2` Una organización es equivalente a una municipalidad.
+
+
+### Acceder al sitio de una organización/municipalidad
+
+* Apuntar a la `url` del sistema y si ya se configuró una organización para dicha `url` se podrá ver la pantalla de 
+bienvenida de la aplicación.
+* Todos los usuarios inclusive el administrador del sitio pueden iniciar sesión por medio de la opción `Entra` en la 
+esquina superior derecha de la pantalla
+
+
 
 ¡Está listo!
 
