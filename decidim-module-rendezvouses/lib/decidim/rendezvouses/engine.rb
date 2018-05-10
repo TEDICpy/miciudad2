@@ -11,8 +11,8 @@ module Decidim
 
       routes do
         # Add engine routes here
-        # resources :rendezvouses
-        # root to: "rendezvouses#index"
+        resources :rendezvouses
+        root to: "rendezvouses#index"
       end
 
       initializer "decidim_rendezvouses.assets" do |app|

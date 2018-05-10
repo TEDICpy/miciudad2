@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require_dependency "decidim/components/namer"
+require_dependency "decidim/features/namer"
 
-Decidim.register_component(:rendezvouses) do |component|
+Decidim.register_feature(:rendezvouses) do |component|
   component.engine = Decidim::Rendezvouses::Engine
   component.admin_engine = Decidim::Rendezvouses::AdminEngine
   component.icon = "decidim/rendezvouses/icon.svg"
