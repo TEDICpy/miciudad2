@@ -2,14 +2,14 @@ es:
   activemodel:
     attributes:
       mail_authorization_handler:
-        verification_code: Código de Verificación
+        verification_code: Código de verificación
   decidim:
     authorization_handlers:
       mail_authorization_handler:
         name: Correo electrónico
-        explanation: Verifica tu identidad con un ćodigo enviado a tu dirección de correo electrónico
+        explanation: Verifica tu identidad con un código enviado a tu dirección de correo electrónico
       automatic_authorization_handler:
-              name: Autorización Automática
+              name: Autorización automática
               explanation: Verifica tu identidad automáticamente
     verifications:
       authorizations:
