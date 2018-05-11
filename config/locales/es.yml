@@ -24,3 +24,10 @@ es:
         home:
           highlighted_processes:
             active_processes: Activos ahora
+
+  pages:
+      home:
+        extended:
+          debates: Discusiones
+          debates_explanation: Espacios para informarse y decidir sobre las propuestas de cada proceso.
+          proposals_explanation: Hacé propuestas, apoyá las existentes y promové los cambios que queres ver.
