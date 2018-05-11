@@ -2,14 +2,14 @@ es:
   activemodel:
     attributes:
       mail_authorization_handler:
-        verification_code: Código de Verificación
+        verification_code: Código de verificación
   decidim:
     authorization_handlers:
       mail_authorization_handler:
         name: Correo electrónico
-        explanation: Verifica tu identidad con un ćodigo enviado a tu dirección de correo electrónico
+        explanation: Verifica tu identidad con un código enviado a tu dirección de correo electrónico
       automatic_authorization_handler:
-              name: Autorización Automática
+              name: Autorización automática
               explanation: Verifica tu identidad automáticamente
     verifications:
       authorizations:
@@ -25,9 +25,11 @@ es:
           highlighted_processes:
             active_processes: Activos ahora
 
+
   pages:
       home:
         extended:
           debates: Discusiones
           debates_explanation: Espacios para informarse y decidir sobre las propuestas de cada proceso.
           proposals_explanation: Hacé propuestas, apoyá las existentes y promové los cambios que queres ver.
+
