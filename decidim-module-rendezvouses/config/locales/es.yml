@@ -22,6 +22,8 @@ es:
           unfold: Desplegar
         index:
           view_rendezvous: "Ver evento"
+        index_header:
+          new_rendezvous: "Nuevo Evento"
         rendezvouses:
           no_rendezvouses_warning: No hay eventos que coincidan con el criterio de búsqueda o no hay ningún encuentro programado.
           upcoming_rendezvouses_warning: Actualmente no hay eventos programados, pero puedes ver los eventos anteriores.

@@ -22,6 +22,8 @@ en:
           unfold: Unfold
         index:
           view_rendezvous: "View event"
+        index_header:
+          new_rendezvous: "Nuevo Evento"
         rendezvouses:
           no_meetings_warning: No events match your search criteria or there isn't any event scheduled.
           upcoming_meetings_warning: Currently, there are no scheduled events, but here you can find all the past events listed.
