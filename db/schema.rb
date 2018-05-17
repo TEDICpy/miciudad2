@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180407141780) do
+ActiveRecord::Schema.define(version: 20180516172120) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -757,6 +757,43 @@ ActiveRecord::Schema.define(version: 20180407141780) do
     t.index ["title"], name: "decidim_proposals_proposal_title_search"
   end
 
+  create_table "decidim_rendezvouses_registrations", force: :cascade do |t|
+    t.bigint "decidim_user_id"
+    t.integer "decidim_rendezvous_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["decidim_rendezvous_id"], name: "idx_registrations_id_on_rendezvous_id"
+    t.index ["decidim_user_id", "decidim_rendezvous_id"], name: "decidim_rendezvouses_registrations_user_rendezvous_unique", unique: true
+    t.index ["decidim_user_id"], name: "index_decidim_rendezvouses_registrations_on_decidim_user_id"
+  end
+
+  create_table "decidim_rendezvouses_rendezvouses", force: :cascade do |t|
+    t.jsonb "title"
+    t.jsonb "description"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.text "address"
+    t.jsonb "location"
+    t.jsonb "location_hints"
+    t.bigint "decidim_author_id"
+    t.bigint "decidim_scope_id"
+    t.jsonb "closing_report"
+    t.integer "attendees_count"
+    t.text "attending_organizations"
+    t.datetime "closed_at"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "reference"
+    t.boolean "registrations_enabled", default: false, null: false
+    t.integer "available_slots", default: 0, null: false
+    t.jsonb "registration_terms"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["closed_at"], name: "index_decidim_rendezvouses_rendezvouses_on_closed_at"
+    t.index ["decidim_author_id"], name: "index_decidim_rendezvouses_rendezvouses_on_decidim_author_id"
+    t.index ["decidim_scope_id"], name: "index_decidim_rendezvouses_rendezvouses_on_decidim_scope_id"
+  end
+
   create_table "decidim_reports", id: :serial, force: :cascade do |t|
     t.integer "decidim_moderation_id", null: false
     t.integer "decidim_user_id", null: false
@@ -961,6 +998,7 @@ ActiveRecord::Schema.define(version: 20180407141780) do
   add_foreign_key "decidim_newsletters", "decidim_users", column: "author_id"
   add_foreign_key "decidim_participatory_process_steps", "decidim_participatory_processes"
   add_foreign_key "decidim_participatory_processes", "decidim_organizations"
+  add_foreign_key "decidim_rendezvouses_registrations", "decidim_users"
   add_foreign_key "decidim_scope_types", "decidim_organizations"
   add_foreign_key "decidim_scopes", "decidim_organizations"
   add_foreign_key "decidim_scopes", "decidim_scope_types", column: "scope_type_id"

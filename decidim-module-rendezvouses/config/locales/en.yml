@@ -4,3 +4,24 @@ en:
     features:
       rendezvouses:
         name: Eventos
+    menu:
+      rendezvouses: "Events"
+    rendezvouses:
+      rendezvouses:
+        filters:
+          category: Category
+          category_prompt: Select a category
+          date: Date
+          past: Past
+          search: Search
+          upcoming: Upcoming
+        filters_small_view:
+          close_modal: Close modal
+          filter: Filter
+          filter_by: Filter by
+          unfold: Unfold
+        index:
+          view_rendezvous: "View event"
+        rendezvouses:
+          no_meetings_warning: No events match your search criteria or there isn't any event scheduled.
+          upcoming_meetings_warning: Currently, there are no scheduled events, but here you can find all the past events listed.

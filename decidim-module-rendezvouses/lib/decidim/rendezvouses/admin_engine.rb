@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative '../../../config/initializers/inflections'
+
 module Decidim
   module Rendezvouses
     # This is the engine that runs on the public interface of `Rendezvouses`.

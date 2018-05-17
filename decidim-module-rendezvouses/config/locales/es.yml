@@ -4,3 +4,24 @@ es:
     features:
       rendezvouses:
         name: Eventos
+    menu:
+      rendezvouses: "Eventos"
+    rendezvouses:
+      rendezvouses:
+        filters:
+          category: Categoría
+          category_prompt: Selecciona una categoría
+          date: Fecha
+          past: Pasadas
+          search: Buscar
+          upcoming: Próximas
+        filters_small_view:
+          close_modal: Cerrar ventana
+          filter: Filtrar
+          filter_by: Filtrar por
+          unfold: Desplegar
+        index:
+          view_rendezvous: "Ver evento"
+        rendezvouses:
+          no_rendezvouses_warning: No hay eventos que coincidan con el criterio de búsqueda o no hay ningún encuentro programado.
+          upcoming_rendezvouses_warning: Actualmente no hay eventos programados, pero puedes ver los eventos anteriores.
