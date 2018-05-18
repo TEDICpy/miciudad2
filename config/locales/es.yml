@@ -32,4 +32,6 @@ es:
           debates: Discusiones
           debates_explanation: Espacios para informarse y decidir sobre las propuestas de cada proceso.
           proposals_explanation: Hacé propuestas, apoyá las existentes y promové los cambios que queres ver.
-
+        statistics:
+          initiatives_count: Iniciativas
+          denuncias_count: Reportes
