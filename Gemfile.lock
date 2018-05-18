@@ -189,7 +189,7 @@ GEM
       foundation-rails (~> 6.4, < 6.5)
       foundation_rails_helper (~> 3.0)
       geocoder (~> 1.4)
-      high_voltage (~> 3.0)
+      high_voltage (~> 3.0.0)
       invisible_captcha (~> 0.10.0)
       jquery-rails (~> 4.3)
       mini_magick (~> 4.8)
@@ -635,7 +635,7 @@ DEPENDENCIES
   web-console (~> 3.5)
 
 RUBY VERSION
-   ruby 2.5.0p0
+   ruby 2.4.1p111
 
 BUNDLED WITH
    1.16.1
