@@ -4,10 +4,9 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", "0.10.0"
-gem "decidim-initiatives", git: "https://github.com/decidim/decidim-initiatives", branch: "a24a1199aa5d723444dfb1d36a5494646f596936"
+gem "decidim", "0.10.1"
+gem "decidim-initiatives", git: "https://github.com/decidim/decidim-initiatives", branch: "master"
 gem "decidim-denuncias", git: "https://github.com/TEDICpy/decidim-reclamos", branch: "development"
-gem "decidim-proposals"
 
 gem "puma", "~> 3.0"
 gem "uglifier", "~> 4.1"
@@ -17,7 +16,7 @@ gem "faker", "~> 1.8"
 group :development, :test do
   gem "byebug", "~> 10.0", platform: :mri
 
-  gem "decidim-dev", "0.10.0"
+  gem "decidim-dev", "0.10.1"
 end
 
 group :development do
