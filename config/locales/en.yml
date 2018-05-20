@@ -46,4 +46,11 @@ en:
             authorizations:
               first_login:
                 actions:
-                  mail_authorization_handler: Verify yourself automatically
+                  mail_authorization_handler: Verify yourself by e-mail
+                  automatic_authorization_handler: Verify yourself automatically
+
+  pages:
+      home:
+        statistics:
+          initiatives_count: Initiatives
+          denuncias_count: Claims

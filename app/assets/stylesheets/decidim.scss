@@ -170,12 +170,94 @@ a.hero-cta.button.expanded.large.button--sc {
 
 }
 
+.main-nav__link a {
 
+    margin: 1em 0.4em;
+}
+
+.omnipresent-banner {
+   
+    padding: 0.2rem;
+    font-size: 1em;
+}
+
+
+
+
+.main-footer a {
+    color:#e8e8e8;
+    text-decoration: underline;
+}
+
+
+.topbar__dropmenu.language-choose {
+    position: absolute;
+    /* bottom: 0px; */
+    right: 70px;
+    width: 120;
+    /* float: right; */
+    left: auto;
+    top: 10px;
+    a {
+        padding: 6px 37px 6px 0px;
+    }
+   
+}
+
+.topbar__dropmenu > ul > li > a::after {
+    margin-top: -1px !important;
+    border-top-color:$secondary !important;
+}
+
+
+.topbar__user__login{
+    color: $secondary;
+    font-weight: bold;
+}
 @media screen and (min-width: 50em) {
 
     .logo-wrapper img {
         max-height: 83px;
     }
+
+}
+
+.section-heading::before {
+    content: none;
+}
+
+.wrapper-home {
+
+    .section-heading {
+        text-align: center;
+        font-size: 2em;
+    }
+
+
+}
+
+
+.wrapper-home {
+    #highlighted-processes {
+
+   
+    .card {
+
+        border: none;
+        background: #fafafa;
+
+
+        .card__content {
+            background:white;
+            position: relative;
+            top: -40px;
+            width: 90%;
+            box-shadow: 0px 0px 25px 0px;
+
+        }
+    }
+
+}
 
 }
 
@@ -241,23 +323,9 @@ a.hero-cta.button.expanded.large.button--sc {
         position: relative;
         z-index: 10;
     }
-    // .hero {
-    //     background-size: cover;
-    //     position: relative;
-    //     z-index: 9;
-    //     top: -57px;
-    // }
+  
 
-
-    .section-heading {
-       
-       // text-align: center;
-      //  font-size: 2em;
-    }
-
-    .section-heading::before {
-        content: none;
-    }
+   
     .wrapper {
         margin-top: 60px
     }
@@ -318,40 +386,9 @@ a.hero-cta.button.expanded.large.button--sc {
     }
 
 
-    .wrapper-home {
-
-        .section-heading {
-            text-align: center;
-            font-size: 2em;
-        }
+    
 
 
-    }
-
-
-    .wrapper-home {
-    #highlighted-processes {
-
-   
-    .card {
-
-        border: none;
-        background: #fafafa;
-
-
-        .card__content {
-            background:white;
-            position: relative;
-            top: -40px;
-            width: 90%;
-            box-shadow: 0px 0px 25px 0px;
-
-        }
-    }
-
-}
-
-}
 
    
 
