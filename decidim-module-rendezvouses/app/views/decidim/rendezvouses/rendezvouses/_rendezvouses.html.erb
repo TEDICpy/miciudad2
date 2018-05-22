@@ -20,7 +20,7 @@
           <% end %>
           <%= render partial: "datetime", locals: {rendezvous: rendezvous} %>
           <%= decidim_sanitize rendezvous_description(rendezvous) %>
-          <%= render partial: "decidim/shared/tags", locals: {resource: rendezvous, tags_class_extra: "tags--rendezvous"} %>
+          <%#= render partial: "decidim/shared/tags", locals: {resource: rendezvous, tags_class_extra: "tags--rendezvous"} %>
           <div class="address card__extra">
             <div class="address__icon">
               <%= icon "rendezvouses", remove_icon_class: true, width: 40, height: 70 %>

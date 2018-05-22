@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180516172120) do
+ActiveRecord::Schema.define(version: 20180521194056) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -777,6 +777,7 @@ ActiveRecord::Schema.define(version: 20180516172120) do
     t.jsonb "location_hints"
     t.bigint "decidim_author_id"
     t.bigint "decidim_scope_id"
+    t.bigint "decidim_organization_id"
     t.jsonb "closing_report"
     t.integer "attendees_count"
     t.text "attending_organizations"
@@ -791,6 +792,7 @@ ActiveRecord::Schema.define(version: 20180516172120) do
     t.datetime "updated_at", null: false
     t.index ["closed_at"], name: "index_decidim_rendezvouses_rendezvouses_on_closed_at"
     t.index ["decidim_author_id"], name: "index_decidim_rendezvouses_rendezvouses_on_decidim_author_id"
+    t.index ["decidim_organization_id"], name: "idx_rendezvous_id_on_organization_id"
     t.index ["decidim_scope_id"], name: "index_decidim_rendezvouses_rendezvouses_on_decidim_scope_id"
   end
 

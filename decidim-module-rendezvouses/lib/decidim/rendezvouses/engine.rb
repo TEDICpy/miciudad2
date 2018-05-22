@@ -16,7 +16,14 @@ module Decidim
 
       routes do
         # Add engine routes here
-        resources :rendezvouses
+        resources :rendezvouses do
+          resource :registration, only: [:create, :destroy] do
+            collection do
+              get :create
+            end
+          end
+          resource :rendezvous_widget, only: :show, path: "embed"
+        end
         #root to: "rendezvouses#index"
       end
 

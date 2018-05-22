@@ -1,0 +1,8 @@
+<div class="card__datetime">
+  <div class="card__datetime__date">
+    <%= l rendezvous.start_time, format: "%d" %> <span class="card__datetime__month"><%= l rendezvous.start_time, format: "%B %Y" %></span>
+  </div>
+  <div class="card__datetime__time">
+    <%= rendezvous.start_time.strftime("%H:%M") %> - <%= rendezvous.end_time.strftime("%H:%M") %>
+  </div>
+</div>

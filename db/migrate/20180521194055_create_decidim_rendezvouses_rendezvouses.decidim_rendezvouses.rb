@@ -11,6 +11,7 @@ class CreateDecidimRendezvousesRendezvouses < ActiveRecord::Migration[5.1]
       t.jsonb :location_hints
       t.references :decidim_author, index: true
       t.references :decidim_scope, index: true
+      t.references :decidim_organization, index: {name: "idx_rendezvous_id_on_organization_id"}
       t.jsonb :closing_report
       t.integer :attendees_count
       t.text :attending_organizations

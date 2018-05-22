@@ -4,7 +4,7 @@ module Decidim
   module Rendezvouses
     module RendezvousSlug
       def slug_from_id(id)
-        "i-#{id}"
+        "v-#{id}"
       end
 
       def id_from_slug(slug)

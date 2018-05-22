@@ -7,7 +7,18 @@ es:
     menu:
       rendezvouses: "Eventos"
     rendezvouses:
+      read_more: "(leer más)"
       rendezvouses:
+        close:
+          invalid: Ha habido un problema al cerrar este evento
+          success: Evento cerrado con éxito
+        create:
+          invalid: Ha habido un problema al crear este evento
+          success: Evento creado con éxito
+        destroy:
+          success: El evento se ha eliminado correctamente
+        edit:
+          update: Actualizar
         filters:
           category: Categoría
           category_prompt: Selecciona una categoría
@@ -20,10 +31,22 @@ es:
           filter: Filtrar
           filter_by: Filtrar por
           unfold: Desplegar
+        new:
+          back: Atrás
         index:
           view_rendezvous: "Ver evento"
         index_header:
           new_rendezvous: "Nuevo Evento"
+        new:
+          create: "Crear"
+          title: "Crear Evento"
+        registration_confirm:
+          cancel: Cancelar
+          confirm: Confirmar
+
         rendezvouses:
           no_rendezvouses_warning: No hay eventos que coincidan con el criterio de búsqueda o no hay ningún encuentro programado.
           upcoming_rendezvouses_warning: Actualmente no hay eventos programados, pero puedes ver los eventos anteriores.
+
+#decidim.events.rendezvouses.upcoming_rendezvous: Próximos eventos
+          #decidim.events.rendezvouses.meeting_created

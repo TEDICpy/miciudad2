@@ -11,14 +11,17 @@ module Decidim
       include FilterResource
       include Paginable
       include RendezvousSlug
+      include FormFactory
+      include NeedsOrganization
 
       helper Decidim::Rendezvouses::ApplicationHelper
       helper Decidim::FiltersHelper
       helper Decidim::ActionAuthorizationHelper
       helper Decidim::WidgetUrlsHelper
+      helper Decidim::SanitizeHelper
+      helper Decidim::ResourceReferenceHelper
 
-      helper_method :rendezvouses, :geocoded_rendezvouses, :rendezvous#, :current_participatory_space
-
+      helper_method :rendezvouses, :geocoded_rendezvouses, :rendezvous #, :current_participatory_space
 
       def index
         return unless search.results.empty? && params.dig("filter", "date") != "past"
@@ -32,10 +35,30 @@ module Decidim
         end
       end
 
+      def new
+        @form = form(RendezvousForm).instance
+      end
+
+      def create
+        @form = form(RendezvousForm).from_params(params)
+
+        CreateRendezvous.call(@form) do
+          on(:ok) do
+            flash[:notice] = I18n.t("rendezvouses.create.success", scope: "decidim.rendezvouses")
+            redirect_to rendezvouses_path
+          end
+
+          on(:invalid) do
+            flash.now[:alert] = I18n.t("rendezvouses.create.invalid", scope: "decidim.rendezvouses")
+            render action: "new"
+          end
+        end
+      end
+
       private
 
       def rendezvous
-        @rendezvous ||= Rendezvous.where(feature: current_feature).find(params[:id])
+        @rendezvous ||= Rendezvous.find(id_from_slug params[:id])
       end
 
       def rendezvouses
@@ -67,12 +90,16 @@ module Decidim
       end
 
 =begin
+      private
+
       alias current_rendezvous current_participatory_space
 
       def current_participatory_space
+        request.env
         @current_participatory_space ||= Rendezvous.find_by(id: id_from_slug(params[:slug]))
       end
 =end
+
     end
   end
 end
