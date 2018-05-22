@@ -1,5 +1,5 @@
-<% provide :meta_title, "EVENTO" %>
 <main class="wrapper">
+  <% provide :meta_title, "EVENTO" %>
   <%= dynamic_map_for rendezvouses_data_for_map(geocoded_rendezvouses) do %>
     <template id="marker-popup">
       <div class="map-info__content">
