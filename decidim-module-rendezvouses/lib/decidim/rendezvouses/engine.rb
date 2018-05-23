@@ -23,6 +23,7 @@ module Decidim
             end
           end
           resource :rendezvous_widget, only: :show, path: "embed"
+          resource :osm_maps, only: :show
         end
         #root to: "rendezvouses#index"
       end
