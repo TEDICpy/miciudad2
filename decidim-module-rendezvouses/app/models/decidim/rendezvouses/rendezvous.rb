@@ -13,7 +13,7 @@ module Decidim::Rendezvouses
     include Decidim::Comments::Commentable
     include Decidim::Traceable
     include Decidim::Participable
-    include Decidim::Rendezvouses::RendezvousSlug
+    #include Decidim::Rendezvouses::RendezvousSlug
     include Decidim::Comments::Commentable
 
     belongs_to :organization,
@@ -23,8 +23,6 @@ module Decidim::Rendezvouses
     belongs_to :scope,
                foreign_key: "decidim_scope_id",
                class_name: "Decidim::Scope"
-
-    has_one :scope, as: :participatory_space
 
     has_many :registrations, class_name: "Decidim::Rendezvouses::Registration", foreign_key: "decidim_rendezvous_id", dependent: :destroy
 
@@ -64,11 +62,13 @@ module Decidim::Rendezvouses
 
     # Public: Overrides slug attribute from participatory processes.
     def slug
-      slug_from_id(id)
+      #slug_from_id(id)
+      # id
     end
 
     def to_param
-      slug
+      #slug
+      id
     end
 
     # Public: Overrides scopes enabled flag available in other models like

@@ -8,6 +8,16 @@ en:
       rendezvouses: "Events"
     rendezvouses:
       read_more: "(read more)"
+      registrations:
+        create:
+          invalid: There's been a problem joining this event.
+          success: You have joined the meeting successfully.
+        destroy:
+          invalid: There's been a problem leaving this event.
+          success: You have left the event successfully.
+        update:
+          invalid: There's been a problem saving the registration settings.
+          success: Event registrations settings successfully saved.
       rendezvouses:
         filters:
           category: Category
@@ -31,8 +41,20 @@ en:
           create: "Create"
           title: "Create Event"
         registration_confirm:
-                  cancel: Cancel
-                  confirm: Confirm
+          cancel: Cancel
+          confirm: Confirm
+        show:
+          attendees: Attendees count
+          contributions: Contributions count
+          going: Going
+          join: Join Event
+          meeting_report: Event report
+          no_slots_available: No slots available
+          organizations: Attending organizations
+          remaining_slots:
+            one: 1 slot remaining
+            other: "%{count} slots remaining"
+            zero: No slots remaining
 
         rendezvouses:
           no_meetings_warning: No events match your search criteria or there isn't any event scheduled.

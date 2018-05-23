@@ -4,13 +4,11 @@ module Decidim
   module Rendezvouses
     class RendezvousesController < Decidim::ApplicationController
       skip_authorization_check
-      #include ParticipatorySpaceContext
-      #participatory_space_layout
 
-      include ActionAuthorization
+      include Decidim::Rendezvouses::ActionAuthorization
       include FilterResource
       include Paginable
-      include RendezvousSlug
+      #include RendezvousSlug
       include FormFactory
       include NeedsOrganization
 
@@ -58,7 +56,8 @@ module Decidim
       private
 
       def rendezvous
-        @rendezvous ||= Rendezvous.find(id_from_slug params[:id])
+        #@rendezvous ||= Rendezvous.find(id_from_slug params[:id])
+        @rendezvous ||= Rendezvous.find(params[:id])
       end
 
       def rendezvouses
@@ -77,8 +76,7 @@ module Decidim
         {
             date: "upcoming",
             search_text: "",
-            scope_id: "" #,
-            #category_id: ""
+            scope_id: ""
         }
       end
 

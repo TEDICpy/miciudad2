@@ -6,6 +6,8 @@ Decidim.register_participatory_space(:rendezvouses) do |participatory_space|
     context.layout = "layouts/decidim/rendezvous"
   end
 
+  # XXX: Could be improved
+  # Actually dummy, can't avoid decidim trying to load admin context
   participatory_space.context(:admin) do |context|
     context.engine = Decidim::Rendezvouses::AdminEngine
     context.layout = "layouts/decidim/admin/rendezvouses"

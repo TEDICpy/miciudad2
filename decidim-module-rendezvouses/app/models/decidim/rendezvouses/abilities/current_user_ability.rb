@@ -16,12 +16,21 @@ module Decidim
           @user = user
           @context = context
 
+          can :join, Rendezvous do |rendezvous|
+            authorized?(:join) && rendezvous.registrations_enabled?
+          end
+
+          can :leave, Rendezvous, &:registrations_enabled?
+
           # can :manage, SomeResource if authorized?(:some_action)
         end
 
         private
 
+        # Attention! There is references to 0.11 components
+        # And we are still using 0.10.1 features
         def authorized?(action)
+          # TODO: Must be component ? feature or what ever ?
           return unless component
 
           ActionAuthorizer.new(user, component, action).authorize.ok?

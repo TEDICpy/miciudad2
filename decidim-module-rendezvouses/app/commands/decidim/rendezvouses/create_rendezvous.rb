@@ -43,7 +43,7 @@ module Decidim
             location: @form.location,
             location_hints: @form.location_hints,
             organization: @form.current_organization,
-            registration_enabled: true
+            registrations_enabled: true
         #feature: @form.current_feature
         )
       end

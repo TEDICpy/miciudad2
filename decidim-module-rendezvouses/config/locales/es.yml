@@ -8,6 +8,16 @@ es:
       rendezvouses: "Eventos"
     rendezvouses:
       read_more: "(leer más)"
+      registrations:
+        create:
+          invalid: Ha habido un problema al unirse a este evento.
+          success: Te has inscrito al evento con éxito.
+        destroy:
+          invalid: Ha habido un problema al salir de este evento.
+          success: Has salido del evento con éxito.
+        update:
+          invalid: Se ha producido un problema al guardar la configuración de la inscripción.
+          success: Se han guardado correctamente las configuraciones de inscripciones de eventos.
       rendezvouses:
         close:
           invalid: Ha habido un problema al cerrar este evento
@@ -43,6 +53,17 @@ es:
         registration_confirm:
           cancel: Cancelar
           confirm: Confirmar
+        show:
+          attendees: Número de asistentes
+          contributions: Número de contribuciones
+          going: Yendo
+          join: Inscribirse al evento
+          meeting_report: Informe del evento
+          no_slots_available: No hay espacio disponible
+          organizations: Organizaciones que han asistido
+          remaining_slots:
+            one: 1 inscripción disponible
+            other: "%{count} inscripciones disponibles"
 
         rendezvouses:
           no_rendezvouses_warning: No hay eventos que coincidan con el criterio de búsqueda o no hay ningún encuentro programado.
@@ -50,3 +71,10 @@ es:
 
 #decidim.events.rendezvouses.upcoming_rendezvous: Próximos eventos
           #decidim.events.rendezvouses.meeting_created
+
+          #"registrations.create.success", scope: "decidim.rendezvouses"
+          #"registrations.create.invalid", scope: "decidim.rendezvouses"
+          #"registrations.destroy.success", scope: "decidim.rendezvouses"
+          #"registrations.destroy.invalid", scope: "decidim.rendezvouses"
+          #"registrations.update.success", scope: "decidim.rendezvouses"
+          #"registrations.update.invalid", scope: "decidim.rendezvouses"

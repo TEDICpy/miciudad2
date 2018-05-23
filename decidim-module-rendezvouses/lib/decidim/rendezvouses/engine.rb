@@ -33,7 +33,9 @@ module Decidim
 
       initializer "decidim_rendezvouses.inject_abilities_to_user" do |_app|
         Decidim.configure do |config|
-          config.abilities += ["Decidim::Rendezvouses::Abilities::CurrentUserAbility"]
+          config.abilities += %w(
+            Decidim::Rendezvouses::Abilities::CurrentUserAbility
+          )
         end
       end
 
