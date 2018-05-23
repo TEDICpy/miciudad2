@@ -18,6 +18,7 @@ module Decidim
 
         CreateOmniauthRegistration.call(@form, verified_email) do
           on(:ok) do |user|
+
             if user.active_for_authentication?
               sign_in_and_redirect user, event: :authentication
               set_flash_message :notice, :success, kind: @form.provider.capitalize
@@ -47,7 +48,8 @@ module Decidim
         if !pending_redirect?(user) && first_login_and_not_authorized?(user)
           decidim_verifications.authorizations_path
         else
-          super
+          "/"
+          #super
         end
       end
 

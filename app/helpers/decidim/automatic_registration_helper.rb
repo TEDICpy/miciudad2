@@ -19,6 +19,11 @@ module Decidim
                                                        verification_attachment: nil,
                                                        granted_at: Time.now
         )
+        # In order to avoid showing the first login form in case of using this auth handler
+        u = Decidim::User.find_by id: id
+        u.sign_in_count += 2
+        u.save!
+        return u
       end
     end
   end
