@@ -31,7 +31,7 @@ module Decidim
             if user.active_for_authentication?
               set_flash_message! :notice, :signed_up
               sign_up(:user, user)
-              respond_with user, location: after_sign_up_path_for(user)
+              respond_with user, location: "/"
             else
               set_flash_message! :notice, :"signed_up_but_#{user.inactive_message}"
               expire_data_after_sign_in!
