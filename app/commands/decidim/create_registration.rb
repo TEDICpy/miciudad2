@@ -44,7 +44,7 @@ module Decidim
                            newsletter_notifications: form.newsletter,
                            email_on_notification: true)
 
-      authorize_automatically(@user.email, @user.id, @user.organization)
+      @user = authorize_automatically(@user.email, @user.id, @user.organization)
 
       return @user
     end

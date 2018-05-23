@@ -61,7 +61,7 @@ module Decidim
 
       @user.tos_agreement = "1"
       @user.save!
-      authorize_automatically(@user.email, @user.id, @user.organization)
+      @user = authorize_automatically(@user.email, @user.id, @user.organization)
       return @user
     end
 
