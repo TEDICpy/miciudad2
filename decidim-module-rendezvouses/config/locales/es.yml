@@ -18,6 +18,15 @@ es:
         update:
           invalid: Se ha producido un problema al guardar la configuración de la inscripción.
           success: Se han guardado correctamente las configuraciones de inscripciones de eventos.
+        edit:
+          title: Inscripciones
+          save: Guardar
+        form:
+          invite_user: Invitar usuario
+          available_slots_help: Déjalo a 0 si tiene inscripciones ilimitadas.
+          registrations_count:
+            one: Ha habido 1 inscripción.
+            other: Ha habido %{count} inscripciones.
       rendezvouses:
         close:
           invalid: Ha habido un problema al cerrar este evento
@@ -50,6 +59,9 @@ es:
         new:
           create: "Crear"
           title: "Crear Evento"
+        edit:
+          update: "Actualizar"
+          title: "Editar Evento"
         registration_confirm:
           cancel: Cancelar
           confirm: Confirmar
@@ -61,20 +73,21 @@ es:
           meeting_report: Informe del evento
           no_slots_available: No hay espacio disponible
           organizations: Organizaciones que han asistido
+          edit: Editar
+          registrations: Inscripciones
+          close: Cerrar
+          delete: Eliminar
           remaining_slots:
             one: 1 inscripción disponible
             other: "%{count} inscripciones disponibles"
-
         rendezvouses:
           no_rendezvouses_warning: No hay eventos que coincidan con el criterio de búsqueda o no hay ningún encuentro programado.
           upcoming_rendezvouses_warning: Actualmente no hay eventos programados, pero puedes ver los eventos anteriores.
-
-#decidim.events.rendezvouses.upcoming_rendezvous: Próximos eventos
-          #decidim.events.rendezvouses.meeting_created
-
-          #"registrations.create.success", scope: "decidim.rendezvouses"
-          #"registrations.create.invalid", scope: "decidim.rendezvouses"
-          #"registrations.destroy.success", scope: "decidim.rendezvouses"
-          #"registrations.destroy.invalid", scope: "decidim.rendezvouses"
-          #"registrations.update.success", scope: "decidim.rendezvouses"
-          #"registrations.update.invalid", scope: "decidim.rendezvouses"
+      rendezvous:
+        destroy:
+          invalid: Ha habido un problema eliminar el evento.
+          success: Evento eliminado exitosamente.
+      rendezvous_close:
+        edit:
+          close: Cerrar
+          title: Cerrar encuentro

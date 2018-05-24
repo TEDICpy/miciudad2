@@ -44,7 +44,8 @@ module Decidim
       end
 
       def participatory_space_admins
-        @rendezvous.feature.participatory_space.admins
+        # Use Organization
+        @rendezvous.organization.admins
       end
 
       def send_notification
@@ -55,13 +56,13 @@ module Decidim
 
       def send_notification_over(percentage)
         Decidim::EventsManager.publish(
-          event: "decidim.events.rendezvouses.rendezvous_registrations_over_percentage",
-          event_class: Decidim::Rendezvouses::RendezvousRegistrationsOverPercentageEvent,
-          resource: @rendezvous,
-          recipient_ids: participatory_space_admins.pluck(:id),
-          extra: {
-            percentage: percentage
-          }
+            event: "decidim.events.rendezvouses.rendezvous_registrations_over_percentage",
+            event_class: Decidim::Rendezvouses::RendezvousRegistrationsOverPercentageEvent,
+            resource: @rendezvous,
+            recipient_ids: participatory_space_admins.pluck(:id),
+            extra: {
+                percentage: percentage
+            }
         )
       end
 

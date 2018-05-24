@@ -17,7 +17,8 @@ module Decidim
       routes do
         # Add engine routes here
         resources :rendezvouses do
-          resource :registration, only: [:create, :destroy] do
+          resources :rendezvous_close, only: [:edit, :update]
+          resource :registration, only: [:create, :destroy, :edit, :update] do
             collection do
               get :create
             end
@@ -30,6 +31,7 @@ module Decidim
 
       initializer "decidim_rendezvouses.assets" do |app|
         app.config.assets.precompile += %w[decidim_rendezvouses_manifest.js decidim_rendezvouses_manifest.css]
+
       end
 
       initializer "decidim_rendezvouses.inject_abilities_to_user" do |_app|

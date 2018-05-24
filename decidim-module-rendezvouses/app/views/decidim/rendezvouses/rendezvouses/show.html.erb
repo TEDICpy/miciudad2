@@ -78,6 +78,13 @@
       <% end %>
       <%#= linked_resources_for rendezvous, :proposals, "proposals_from_rendezvous" %>
       <%#= linked_resources_for rendezvous, :results, "rendezvouses_through_proposals" %>
+      <% if can? :edit, rendezvous %>
+        <%= action_authorized_link_to :edit, t('.edit'), edit_rendezvous_path(rendezvous), method: :get, class: "button button--sc" %>
+        <%= action_authorized_link_to :edit, t('.registrations'), edit_rendezvous_registration_path(rendezvous), method: :get, class: "button button--sc" %>
+        <%= action_authorized_link_to :edit, t('.close'), edit_rendezvous_rendezvous_close_path(rendezvous_id: rendezvous.id, id: rendezvous.id), method: :get, class: "button button--sc" %>
+        <%= action_authorized_link_to :edit, t('.delete'), rendezvous_path(rendezvous), method: :delete, class: "button button--sc", data: {confirm: "actions.confirm_destroy", scope: "decidim.rendezvouses"} %>
+      <% end %>
+
     </div>
   </div>
 <%#= attachments_for rendezvous %>

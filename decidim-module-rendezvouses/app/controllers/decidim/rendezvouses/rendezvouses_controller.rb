@@ -53,6 +53,38 @@ module Decidim
         end
       end
 
+
+      def edit
+        @form = form(RendezvousForm).from_model(rendezvous)
+      end
+
+      def update
+        @form = form(RendezvousForm).from_params(params)
+
+        UpdateRendezvous.call(@form, rendezvous) do
+          on(:ok) do
+            flash[:notice] = I18n.t("rendezvouses.update.success", scope: "decidim.rendezvouses.admin")
+            redirect_to rendezvouses_path
+          end
+
+          on(:invalid) do
+            flash.now[:alert] = I18n.t("rendezvouses.update.invalid", scope: "decidim.rendezvouses.admin")
+            render action: "edit"
+          end
+        end
+      end
+
+
+      def destroy
+        DestroyRendezvous.call(rendezvous, current_user) do
+          on(:ok) do
+            flash[:notice] = I18n.t("rendezvous.destroy.success", scope: "decidim.rendezvouses")
+
+            redirect_to rendezvouses_path
+          end
+        end
+      end
+
       private
 
       def rendezvous
@@ -86,7 +118,6 @@ module Decidim
             current_user: current_user
         }
       end
-
 
 
 =begin

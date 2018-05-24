@@ -18,7 +18,26 @@ en:
         update:
           invalid: There's been a problem saving the registration settings.
           success: Event registrations settings successfully saved.
+        edit:
+          title: Registrations
+          save: Save
+        form:
+          invite_user: Invite user
+          available_slots_help: Leave as 0 for unlimited slots
+          registrations_count:
+            one: There is 1 registration.
+            other: There are %{count} registrations.
       rendezvouses:
+        close:
+          invalid: There was a problem closing this event
+          success: Event closed successfully
+        create:
+          invalid: There was a problem creating this event
+          success: Event created successfully
+        destroy:
+          success: Event deleted correctly
+        edit:
+          update: Update
         filters:
           category: Category
           category_prompt: Select a category
@@ -40,6 +59,9 @@ en:
         new:
           create: "Create"
           title: "Create Event"
+        edit:
+          update: "Update"
+          title: "Update event"
         registration_confirm:
           cancel: Cancel
           confirm: Confirm
@@ -51,11 +73,21 @@ en:
           meeting_report: Event report
           no_slots_available: No slots available
           organizations: Attending organizations
+          registrations: Registrations
+          close: Close
+          delete: Delete
           remaining_slots:
             one: 1 slot remaining
             other: "%{count} slots remaining"
             zero: No slots remaining
-
         rendezvouses:
           no_meetings_warning: No events match your search criteria or there isn't any event scheduled.
           upcoming_meetings_warning: Currently, there are no scheduled events, but here you can find all the past events listed.
+      rendezvous:
+        destroy:
+          invalid: There was a problem deleting this event.
+          success: Event deleted correctly.
+      rendezvous_close:
+        edit:
+          close: Close
+          title: Close event

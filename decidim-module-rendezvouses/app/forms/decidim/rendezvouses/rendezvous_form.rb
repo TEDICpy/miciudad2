@@ -52,7 +52,7 @@ module Decidim
       # Returns a Decidim::Scope
       def scope
         # FIXME: Get scope correctly
-        @scope ||= Decidim::Scope.find_by(id: 1)
+        @scope ||= context.current_organization.scopes[0]
         #@scope ||= @decidim_scope_id ? current_participatory_space.scopes.find_by(id: @decidim_scope_id) : current_participatory_space.scope
       end
 

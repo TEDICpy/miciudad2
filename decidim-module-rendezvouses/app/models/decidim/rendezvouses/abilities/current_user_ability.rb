@@ -22,6 +22,10 @@ module Decidim
 
           can :leave, Rendezvous, &:registrations_enabled?
 
+          can :edit, Rendezvous do |rendezvous|
+            user.admin.eql? true or user.id.eql? rendezvous.author.id
+          end
+
           # can :manage, SomeResource if authorized?(:some_action)
         end
 

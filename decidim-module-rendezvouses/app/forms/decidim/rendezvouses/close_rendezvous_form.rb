@@ -14,7 +14,7 @@ module Decidim
       #attribute :proposals
       attribute :closed_at, DateTime, default: -> (_form, _attribute) {Time.current}
 
-      validates :closing_report, translatable_presence: true
+      #validates :closing_report, translatable_presence: true
       validates :attendees_count, presence: true, numericality: {greater_than_or_equal_to: 0}
       validates :contributions_count, numericality: true, allow_blank: true
       validates :attending_organizations, presence: true
