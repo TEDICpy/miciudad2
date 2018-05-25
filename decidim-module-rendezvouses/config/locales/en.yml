@@ -1,5 +1,26 @@
 ---
 en:
+  activemodel:
+    attributes:
+      close_rendezvous:
+        attendees_count: Number of attendees
+        attending_organizations: List of organizations that attended
+        closing_report: Report
+        contributions_count: Number of contributions
+        proposal_ids: Proposals created in the event
+      rendezvous:
+        address: Address
+        available_slots: Available slots for this event
+        decidim_category_id: Category
+        decidim_scope_id: Scope
+        description: Description
+        end_time: End Time
+        location: Location
+        location_hints: Location hints
+        registration_terms: Registration terms
+        registrations_enabled: Registrations enabled
+        start_time: Start Time
+        title: Title
   decidim:
     events:
       rendezvouses:

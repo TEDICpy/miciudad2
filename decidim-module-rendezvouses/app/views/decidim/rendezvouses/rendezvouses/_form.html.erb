@@ -17,16 +17,16 @@
     </div>
 
     <div class="row column">
+      <%= form.text_field :address %>
+    </div>
+
+    <div class="row column">
       <div id="map" class="google-map">
         <%= form.hidden_field :latitude %>
         <%= form.hidden_field :longitude %>
         <%= stylesheet_link_tag "decidim/map" %>
         <%= javascript_include_tag "decidim/rendezvouses/map" %>
       </div>
-    </div>
-
-    <div class="row column">
-      <%= form.text_field :address %>
     </div>
 
     <div class="row column">

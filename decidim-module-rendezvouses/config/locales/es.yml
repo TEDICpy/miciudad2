@@ -1,5 +1,26 @@
 ---
 es:
+  activemodel:
+    attributes:
+      close_rendezvous:
+        attendees_count: Número de asistentes
+        attending_organizations: Lista de organizaciones que han participado
+        closing_report: Informe
+        contributions_count: Número de contribuciones
+        proposal_ids: Propuestas creadas en el encuentro
+      rendezvous:
+        address: Dirección
+        available_slots: Espacios disponibles para este encuentro
+        decidim_category_id: Categoría
+        decidim_scope_id: Ámbito
+        description: Descripción
+        end_time: Hora de finalización
+        location: Ubicación
+        location_hints: Pistas de ubicación
+        registration_terms: Términos y condiciones de inscripción
+        registrations_enabled: Inscripciones abiertas
+        start_time: Hora de inicio
+        title: Título
   decidim:
     events:
       rendezvouses:
