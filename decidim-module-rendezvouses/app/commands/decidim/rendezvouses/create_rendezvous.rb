@@ -17,9 +17,9 @@ module Decidim
 
         transaction do
           create_rendezvous!
+          schedule_upcoming_rendezvous_notification
+          send_notification
         end
-        schedule_upcoming_rendezvous_notification
-        send_notification
 
         broadcast(:ok, @rendezvous)
       end

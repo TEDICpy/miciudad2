@@ -1,7 +1,9 @@
 <div class="row collapse">
   <% # TODO: Evaluate if authorization will be required %>
-  <%= link_to new_rendezvous_path, {class: "title-action__action button small hollow", icon: "plus"} do %>
-    <%= t(".new_rendezvous") %>
-    <%= icon "plus" %>
+  <% if can? :create, Decidim::Rendezvouses::Rendezvous %>
+    <%= link_to new_rendezvous_path, {class: "title-action__action button small hollow", icon: "plus"} do %>
+      <%= t(".new_rendezvous") %>
+      <%= icon "plus" %>
+    <% end %>
   <% end %>
 </div>

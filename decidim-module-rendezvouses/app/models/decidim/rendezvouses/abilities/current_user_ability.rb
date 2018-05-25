@@ -26,6 +26,8 @@ module Decidim
             user.admin.eql? true or user.id.eql? rendezvous.author.id
           end
 
+          can :create, Rendezvous
+
           # can :manage, SomeResource if authorized?(:some_action)
         end
 
