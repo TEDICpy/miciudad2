@@ -38,6 +38,8 @@ module Decidim
             rendezvous,
             form.current_user,
             scope: form.scope,
+            image: form.image,
+            remove_image: form.remove_image,
             category: form.category,
             title: form.title,
             description: form.description,

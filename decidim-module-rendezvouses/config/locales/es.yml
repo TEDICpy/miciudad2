@@ -1,6 +1,38 @@
 ---
 es:
   decidim:
+    events:
+      rendezvouses:
+        rendezvous_closed:
+          email_intro: 'Se ha cerrado el evento "%{resource_title}"'
+          email_outro: Has recibido esta notificación porque sigues el evento "%{resource_title}". Puedes dejar de seguirlo en el enlace anterior.
+          email_subject: Se ha cerrado el evento "%{resource_title}"
+          notification_title: El evento <a href="%{resource_path}">%{resource_title}</a> ha sido cerrada.
+        rendezvous_created:
+          email_intro: Se ha añadido el evento "%{resource_title}".
+          email_outro: Has recibido esta notificación. Puedes dejar de seguirlo en el enlace anterior.
+          email_subject: Nuevo evento añadido.
+          notification_title: Se ha añadido el evento <a href="%{resource_path}">%{resource_title}</a>.
+        rendezvous_registrations_over_percentage:
+          email_intro: Las inscripciones ocupadas en "%{resource_title}" son %{percentage}%.
+          email_outro: Has recibido esta notificación porque eres es un administrador del espacio participativo del evento.
+          email_subject: Las inscripciones en "%{resource_title}" están por encima del %{percentage}%
+          notification_title: Las inscripciones de <a href="%{resource_path}">%{resource_title}</a> están por encima del %{percentage}%.
+        rendezvous_updated:
+          email_intro: 'Se ha cerrado el evento "%{resource_title}":'
+          email_outro: Has recibido esta notificación porque sigues el evento "%{resource_title}". Puedes dejar de seguirlo en el enlace anterior.
+          email_subject: Se ha actualizado el evento "%{resource_title}"
+          notification_title: El evento <a href="%{resource_path}">%{resource_title}</a> ha sido actualizado.
+        registrations_enabled:
+          email_intro: 'El evento "%{resource_title}" ha abierto las inscripciones. Puedes inscribirte en su página:'
+          email_outro: Has recibido esta notificación porque sigues el evento "%{resource_title}". Puedes dejar de seguirlo en el enlace anterior.
+          email_subject: El evento "%{resource_title}" ha abierto las inscripciones.
+          notification_title: El evento <a href="%{resource_path}">%{resource_title}</a> ha abierto las inscripciones.
+        upcoming_rendezvous:
+          email_intro: El evento "%{resource_title}" comenzará en menos de 48 h.
+          email_outro: Has recibido esta notificación porque sigues el evento "%{resource_title}". Puedes dejar de seguirlo en el enlace anterior.
+          email_subject: El evento "%{resource_title}" comenzará en menos de 48 h.
+          notification_title: El evento <a href="%{resource_path}">%{resource_title}</a> comenzará en menos de 48 h.
     features:
       rendezvouses:
         name: Eventos
@@ -8,6 +40,10 @@ es:
       rendezvouses: "Eventos"
     rendezvouses:
       read_more: "(leer más)"
+      invite_join_rendezvous_mailer:
+        invite:
+          invited_you_to_join_a_rendezvous: "%{invited_by} te ha invitado a unirte a un evento en %{application}. Puedes aceptarlo a través del siguiente enlace."
+          join: Únete al evento '%{rendezvous_title}'
       registrations:
         create:
           invalid: Ha habido un problema al unirse a este evento.
@@ -70,7 +106,7 @@ es:
           contributions: Número de contribuciones
           going: Yendo
           join: Inscribirse al evento
-          meeting_report: Informe del evento
+          rendezvous_report: Informe del evento
           no_slots_available: No hay espacio disponible
           organizations: Organizaciones que han asistido
           edit: Editar
@@ -81,7 +117,7 @@ es:
             one: 1 inscripción disponible
             other: "%{count} inscripciones disponibles"
         rendezvouses:
-          no_rendezvouses_warning: No hay eventos que coincidan con el criterio de búsqueda o no hay ningún encuentro programado.
+          no_rendezvouses_warning: No hay eventos que coincidan con el criterio de búsqueda o no hay ningún evento programado.
           upcoming_rendezvouses_warning: Actualmente no hay eventos programados, pero puedes ver los eventos anteriores.
       rendezvous:
         destroy:
@@ -90,4 +126,4 @@ es:
       rendezvous_close:
         edit:
           close: Cerrar
-          title: Cerrar encuentro
+          title: Cerrar evento

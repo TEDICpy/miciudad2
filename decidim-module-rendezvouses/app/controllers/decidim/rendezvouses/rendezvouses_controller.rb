@@ -43,7 +43,7 @@ module Decidim
         CreateRendezvous.call(@form) do
           on(:ok) do
             flash[:notice] = I18n.t("rendezvouses.create.success", scope: "decidim.rendezvouses")
-            redirect_to rendezvouses_path
+            redirect_to rendezvous_path
           end
 
           on(:invalid) do
@@ -63,12 +63,12 @@ module Decidim
 
         UpdateRendezvous.call(@form, rendezvous) do
           on(:ok) do
-            flash[:notice] = I18n.t("rendezvouses.update.success", scope: "decidim.rendezvouses.admin")
-            redirect_to rendezvouses_path
+            flash[:notice] = I18n.t("rendezvouses.update.success", scope: "decidim.rendezvouses")
+            redirect_to rendezvous_path
           end
 
           on(:invalid) do
-            flash.now[:alert] = I18n.t("rendezvouses.update.invalid", scope: "decidim.rendezvouses.admin")
+            flash.now[:alert] = I18n.t("rendezvouses.update.invalid", scope: "decidim.rendezvouses")
             render action: "edit"
           end
         end

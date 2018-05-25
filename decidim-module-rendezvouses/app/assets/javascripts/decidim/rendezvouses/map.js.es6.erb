@@ -62,11 +62,43 @@ const loadMap = (mapId, markersData) => {
     if (markersData.length > 0) {
         addMarkers(markersData, markerClusters, map);
     } else {
-        //map.fitWorld();
         map.setView([-27.3364, -55.8675], 12)
     }
 
     map.scrollWheelZoom.disable();
+
+    return map;
+};
+
+const loadMapCreate = (mapId) => {
+
+    if (window.Decidim.currentMap) {
+        window.Decidim.currentMap.remove();
+        window.Decidim.currentMap = null;
+    }
+
+    const map = L.map(mapId);
+
+    L.tileLayer.OpenStreetMap().addTo(map);
+
+    map.setView([-27.3364, -55.8675], 12)
+
+    map.scrollWheelZoom.disable();
+
+    var newMarkerGroup = new L.LayerGroup();
+
+    newMarkerGroup.addTo(map);
+
+    function addMarker(e) {
+        newMarkerGroup.clearLayers();
+        var newMarker = new L.marker(e.latlng, {icon: new L.DivIcon.SVGIcon.DecidimIcon()});//.addTo(map);
+        document.getElementById("rendezvous_latitude").value = newMarker.getLatLng().lat;
+        document.getElementById("rendezvous_longitude").value = newMarker.getLatLng().lng;
+        newMarker.addTo(newMarkerGroup);
+    }
+
+    map.on('click', addMarker);
+
 
     return map;
 };
@@ -87,7 +119,13 @@ $(() => {
 
     //window.Decidim.mapConfiguration = { hereAppId, hereAppCode };
 
-    if ($map.length > 0) {
-        window.Decidim.currentMap = loadMap(mapId, markersData);
+    if (markersData) {
+        if ($map.length > 0) {
+            window.Decidim.currentMap = loadMap(mapId, markersData);
+        }
+    } else {
+        //Create Case
+        window.Decidim.currentMap = loadMapCreate(mapId);
     }
+
 });

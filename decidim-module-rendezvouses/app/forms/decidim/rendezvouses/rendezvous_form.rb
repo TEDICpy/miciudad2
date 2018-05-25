@@ -15,6 +15,8 @@ module Decidim
       attribute :address, String
       attribute :latitude, Float
       attribute :longitude, Float
+      attribute :image
+      attribute :remove_image
       attribute :start_time, Decidim::Attributes::TimeWithZone
       attribute :end_time, Decidim::Attributes::TimeWithZone
       attribute :decidim_scope_id, Integer
@@ -32,6 +34,7 @@ module Decidim
       #validates :current_feature, presence: true
       #validates :category, presence: true, if: -> (form) {form.decidim_category_id.present?}
       validates :scope, presence: true, if: -> (form) {form.decidim_scope_id.present?}
+      validates :image, file_size: { less_than_or_equal_to: ->(_record) { Decidim.maximum_attachment_size } }, file_content_type: { allow: ["image/jpeg", "image/png"] }
 
       # FIXME: Fix the participatory process space and scope issues
       #validate :scope_belongs_to_participatory_space_scope

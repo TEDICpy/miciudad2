@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180521194056) do
+ActiveRecord::Schema.define(version: 20180525004614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -790,6 +790,7 @@ ActiveRecord::Schema.define(version: 20180521194056) do
     t.jsonb "registration_terms"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
     t.index ["closed_at"], name: "index_decidim_rendezvouses_rendezvouses_on_closed_at"
     t.index ["decidim_author_id"], name: "index_decidim_rendezvouses_rendezvouses_on_decidim_author_id"
     t.index ["decidim_organization_id"], name: "idx_rendezvous_id_on_organization_id"

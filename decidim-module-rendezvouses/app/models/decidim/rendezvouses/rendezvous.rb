@@ -26,6 +26,8 @@ module Decidim::Rendezvouses
 
     has_many :registrations, class_name: "Decidim::Rendezvouses::Registration", foreign_key: "decidim_rendezvous_id", dependent: :destroy
 
+    mount_uploader :image, Decidim::ImageUploader
+
     validates :title, presence: true
 
     geocoded_by :address, http_headers: ->(proposal) {{"Referer" => proposal.feature.organization.host}}
