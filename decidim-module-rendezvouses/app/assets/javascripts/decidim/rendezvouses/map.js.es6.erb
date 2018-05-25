@@ -18,6 +18,8 @@ L.DivIcon.SVGIcon.DecidimIcon = L.DivIcon.SVGIcon.extend({
     }
 });
 
+const markerIcon = {icon: new L.DivIcon.SVGIcon.DecidimIcon()};
+
 const popupTemplateId = 'marker-popup';
 $.template(popupTemplateId, $(`#${popupTemplateId}`).html());
 
@@ -70,7 +72,7 @@ const loadMap = (mapId, markersData) => {
     return map;
 };
 
-const loadMapCreate = (mapId) => {
+const loadMapCreate = (mapId, lat, lng) => {
 
     if (window.Decidim.currentMap) {
         window.Decidim.currentMap.remove();
@@ -89,9 +91,17 @@ const loadMapCreate = (mapId) => {
 
     newMarkerGroup.addTo(map);
 
+    if (lat && lng) {
+        var m = new L.marker([lat, lng], markerIcon);
+        m.addTo(newMarkerGroup);
+        map.setView([lat, lng], 16);
+    }
+
     function addMarker(e) {
         newMarkerGroup.clearLayers();
-        var newMarker = new L.marker(e.latlng, {icon: new L.DivIcon.SVGIcon.DecidimIcon()});//.addTo(map);
+
+
+        var newMarker = new L.marker(e.latlng, markerIcon);//.addTo(map);
         document.getElementById("rendezvous_latitude").value = newMarker.getLatLng().lat;
         document.getElementById("rendezvous_longitude").value = newMarker.getLatLng().lng;
         newMarker.addTo(newMarkerGroup);
@@ -125,7 +135,9 @@ $(() => {
         }
     } else {
         //Create Case
-        window.Decidim.currentMap = loadMapCreate(mapId);
+        var lat = document.getElementById("rendezvous_latitude").value;
+        var lng = document.getElementById("rendezvous_longitude").value;
+        window.Decidim.currentMap = loadMapCreate(mapId, lat, lng);
     }
 
 });
