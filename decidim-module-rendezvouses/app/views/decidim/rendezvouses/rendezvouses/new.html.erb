@@ -1,0 +1,23 @@
+<main class="wrapper">
+  <% provide :meta_title, "EVENTO" %>
+  <% content_for :back_link do %>
+    <%= link_to :back, class: "muted-link" do %>
+      <%= icon "chevron-left", class: "icon--small" %>
+      <%#= t(".back") %>
+      <%= "Atrás" %>
+    <% end %>
+  <% end %>
+
+  <br>
+  <div class="row">
+    <div class="columns large-12 medium-centered">
+      <%= decidim_form_for(@form, html: {class: "form new_rendezvous"}) do |f| %>
+        <%= render partial: 'form', object: f, locals: {title: t('.title')} %>
+
+        <div class="button--double form-general-submit">
+          <%= f.submit t(".create") %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</main>

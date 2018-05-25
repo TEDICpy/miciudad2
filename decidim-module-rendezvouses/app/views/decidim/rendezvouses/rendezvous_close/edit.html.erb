@@ -1,0 +1,7 @@
+<%= decidim_form_for(@form, url: rendezvous_rendezvous_close_path(rendezvous, @form), html: {class: "form edit_close_rendezvous"}) do |f| %>
+  <%= render partial: 'form', object: f, locals: {title: t('.title')} %>
+
+  <div class="button--double form-general-submit">
+    <%= f.submit t(".close") %>
+  </div>
+<% end %>

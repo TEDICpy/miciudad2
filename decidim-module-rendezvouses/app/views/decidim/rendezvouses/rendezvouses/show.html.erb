@@ -1,0 +1,98 @@
+<main class="wrapper">
+  <br>
+  <% provide(:title, translated_attribute(rendezvous.title)) %>
+
+  <% add_decidim_meta_tags({
+                               title: translated_attribute(rendezvous.title),
+                               description: translated_attribute(rendezvous.description),
+                               url: rendezvous_url(rendezvous.id)
+                           }) %>
+
+  <div class="row column view-header">
+    <h2 class="heading2"><%= translated_attribute rendezvous.title %></h2>
+  </div>
+  <div class="row">
+    <div class="columns section view-side mediumlarge-4 mediumlarge-push-8
+              large-3 large-push-9">
+      <div class="card extra">
+        <div class="card__content">
+          <div class="extra__date">
+            <%= l rendezvous.start_time, format: "%d" %>
+            <span class="extra__month"><%= l rendezvous.start_time, format: "%B" %></span>
+          </div>
+          <div class="extra__time">
+            <%= rendezvous.start_time.strftime("%H:%M") %> - <%= rendezvous.end_time.strftime("%H:%M") %>
+          </div>
+          <% if !rendezvous.closed? && rendezvous.registrations_enabled? %>
+            <% if rendezvous.has_registration_for? current_user %>
+              <%= action_authorized_button_to :leave, t('.going'), rendezvous_registration_path(rendezvous), method: :delete, class: "button expanded button--sc success", data: {disable: true} %>
+            <% else %>
+              <%= action_authorized_button_to :join, rendezvous.has_available_slots? ? t('.join') : t('.no_slots_available'), "", class: "button expanded button--sc", disabled: !rendezvous.has_available_slots?, data: {open: current_user.present? ? "rendezvous-registration-confirm" : "loginModal"} %>
+            <% end %>
+            <% if rendezvous.available_slots.positive? %>
+              <span><%= t(".remaining_slots", count: rendezvous.remaining_slots) %></span>
+            <% end %>
+          <% end %>
+          <%= render partial: "decidim/shared/follow_button", locals: {followable: rendezvous} %>
+        </div>
+        <% if rendezvous.closed? %>
+          <div class="card card--secondary extra definition-data">
+            <% if rendezvous.contributions_count && rendezvous.contributions_count.positive? %>
+              <div class="definition-data__item definition-data__item--double">
+                <span class="definition-data__title"><%= t(".attendees") %></span>
+                <span class="definition-data__number"><%= rendezvous.attendees_count %></span>
+              </div>
+              <div class="definition-data__item definition-data__item--double">
+                <span class="definition-data__title"><%= t(".contributions") %></span>
+                <span class="definition-data__number"><%= rendezvous.contributions_count %></span>
+              </div>
+            <% else %>
+              <div class="definition-data__item">
+                <span class="definition-data__title"><%= t(".attendees") %></span>
+                <span class="definition-data__number"><%= rendezvous.attendees_count %></span>
+              </div>
+            <% end %>
+            <div class="definition-data__item">
+              <span class="definition-data__title"><%= t(".organizations") %></span>
+              <span class="definition-data__text"><%= rendezvous.attending_organizations %></span>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <%= resource_reference(rendezvous) %>
+      <%= render partial: "decidim/shared/share_modal" %>
+      <%= embed_modal_for rendezvous_rendezvous_widget_url(rendezvous, format: :js) %>
+    </div>
+    <div class="columns mediumlarge-8 mediumlarge-pull-4">
+      <div class="section">
+        <img src="<%= rendezvous.image.url %>" style="max-width: 100%;max-height: 100%; object-fit: contain"/>
+
+        <p><%= decidim_sanitize translated_attribute rendezvous.description %></p>
+        <%# Call our custom static_map %>
+        <%= render partial: "static_map", locals: {icon_name: "rendezvouses", geolocalizable: rendezvous} %>
+        <%#= render partial: "decidim/shared/tags", locals: { resource: rendezvous, tags_class_extra: "tags--rendezvous" } %>
+      </div>
+      <% if rendezvous.closed? %>
+        <div class="section">
+          <h3 class="section-heading"><%= t(".rendezvous_report") %></h3>
+          <%= decidim_sanitize translated_attribute rendezvous.closing_report %>
+        </div>
+      <% end %>
+      <%#= linked_resources_for rendezvous, :proposals, "proposals_from_rendezvous" %>
+      <%#= linked_resources_for rendezvous, :results, "rendezvouses_through_proposals" %>
+      <% if can? :edit, rendezvous %>
+        <%= action_authorized_link_to :edit, t('.edit'), edit_rendezvous_path(rendezvous), method: :get, class: "button button--sc" %>
+        <%= action_authorized_link_to :edit, t('.registrations'), edit_rendezvous_registration_path(rendezvous), method: :get, class: "button button--sc" %>
+        <%#= action_authorized_link_to :edit, t('.close'), edit_rendezvous_rendezvous_close_path(rendezvous_id: rendezvous.id, id: rendezvous.id), method: :get, class: "button button--sc" %>
+        <%= action_authorized_link_to :edit, t('.delete'), rendezvous_path(rendezvous), method: :delete, class: "button button--sc", data: {confirm: "actions.confirm_destroy", scope: "decidim.rendezvouses"} %>
+      <% end %>
+
+    </div>
+  </div>
+<%#= attachments_for rendezvous %>
+  <%= comments_for rendezvous %>
+
+  <%= render partial: "registration_confirm" %>
+</main>
+<%= javascript_include_tag "decidim/proposals/social_share" %>
+<%= stylesheet_link_tag "decidim/proposals/social_share" %>
