@@ -1,1 +1,15 @@
 @import "decidim/editor";
+
+/**
+  Evita que el menú de usuario salga debajo del mapa en el listado de eventos
+ */
+.google-map.leaflet-container {
+  z-index: 1;
+}
+
+/**
+  Corrige problemas de espacios para el toolbar del edit
+ */
+button.ql-video {
+  margin: 0px;
+}
