@@ -9,7 +9,7 @@ module Decidim
 
       translatable_attribute :title, String
       translatable_attribute :description, String
-      translatable_attribute :location, String
+      #translatable_attribute :location, String
       translatable_attribute :location_hints, String
 
       attribute :address, String
@@ -24,7 +24,7 @@ module Decidim
 
       validates :title, translatable_presence: true
       validates :description, translatable_presence: true
-      validates :location, translatable_presence: true
+      #validates :location, translatable_presence: true
       validates :address, presence: true
       #validates :address, geocoding: true, if: -> {Decidim.geocoder.present?}
       validates :start_time, presence: true, date: {before: :end_time}

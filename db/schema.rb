@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180525004614) do
+ActiveRecord::Schema.define(version: 20180526160038) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -773,7 +773,6 @@ ActiveRecord::Schema.define(version: 20180525004614) do
     t.datetime "start_time"
     t.datetime "end_time"
     t.text "address"
-    t.jsonb "location"
     t.jsonb "location_hints"
     t.bigint "decidim_author_id"
     t.bigint "decidim_scope_id"

@@ -61,6 +61,8 @@ es:
     menu:
       rendezvouses: "Eventos"
     rendezvouses:
+      actions:
+        confirm_destroy: ¿Está seguro de eliminar este evento?
       read_more: "(leer más)"
       invite_join_rendezvous_mailer:
         invite:
@@ -98,6 +100,8 @@ es:
           back: Volver
           update: Actualizar
           title: "Editar Evento"
+        update:
+          success: El evento se actualizó correctamente.
         filters:
           category: Categoría
           category_prompt: Selecciona una categoría

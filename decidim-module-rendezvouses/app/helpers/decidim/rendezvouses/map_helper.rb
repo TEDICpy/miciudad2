@@ -18,7 +18,6 @@ module Decidim
                      startTimeYear: l(rendezvous.start_time, format: "%Y"),
                      startTime: "#{rendezvous.start_time.strftime("%H:%M")} - #{rendezvous.end_time.strftime("%H:%M")}",
                      icon: icon("rendezvouses", width: 40, height: 70, remove_icon_class: true),
-                     location: translated_attribute(rendezvous.location),
                      locationHints: translated_attribute(rendezvous.location_hints),
                      link: rendezvous_path(rendezvous))
         end

@@ -4,7 +4,7 @@ module Decidim
   module Rendezvouses
     class RendezvousesController < Decidim::ApplicationController
       skip_authorization_check
-      #layout "decidim/rendezvous"
+      layout "decidim/rendezvous"
 
       include Decidim::Rendezvouses::ActionAuthorization
       include FilterResource

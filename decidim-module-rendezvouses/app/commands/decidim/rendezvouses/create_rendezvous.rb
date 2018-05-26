@@ -42,7 +42,6 @@ module Decidim
             address: @form.address,
             latitude: @form.latitude,
             longitude: @form.longitude,
-            location: @form.location,
             location_hints: @form.location_hints,
             organization: @form.current_organization,
             registrations_enabled: true
