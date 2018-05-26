@@ -15,6 +15,7 @@ en:
         decidim_scope_id: Scope
         description: Description
         end_time: End Time
+        image: Image
         location: Location
         location_hints: Location hints
         registration_terms: Registration terms
@@ -94,7 +95,9 @@ en:
         destroy:
           success: Event deleted correctly
         edit:
+          back: Back
           update: Update
+          title: Edit event
         filters:
           category: Category
           category_prompt: Select a category
@@ -107,18 +110,14 @@ en:
           filter: Filter
           filter_by: Filter by
           unfold: Unfold
-        new:
-          back: Back
         index:
           view_rendezvous: "View event"
         index_header:
-          new_rendezvous: "Nuevo Evento"
+          new_rendezvous: New event
         new:
-          create: "Create"
-          title: "Create Event"
-        edit:
-          update: "Update"
-          title: "Update event"
+          back: Back
+          create: Create
+          title: Create event
         registration_confirm:
           cancel: Cancel
           confirm: Confirm
@@ -130,6 +129,7 @@ en:
           rendezvous_report: Event report
           no_slots_available: No slots available
           organizations: Attending organizations
+          edit: Edit
           registrations: Registrations
           close: Close
           delete: Delete

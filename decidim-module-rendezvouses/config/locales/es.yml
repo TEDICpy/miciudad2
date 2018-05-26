@@ -15,6 +15,7 @@ es:
         decidim_scope_id: Ámbito
         description: Descripción
         end_time: Hora de finalización
+        image: Imagen
         location: Ubicación
         location_hints: Pistas de ubicación
         registration_terms: Términos y condiciones de inscripción
@@ -94,7 +95,9 @@ es:
         destroy:
           success: El evento se ha eliminado correctamente
         edit:
+          back: Volver
           update: Actualizar
+          title: "Editar Evento"
         filters:
           category: Categoría
           category_prompt: Selecciona una categoría
@@ -107,18 +110,14 @@ es:
           filter: Filtrar
           filter_by: Filtrar por
           unfold: Desplegar
-        new:
-          back: Atrás
         index:
           view_rendezvous: "Ver evento"
         index_header:
           new_rendezvous: "Nuevo Evento"
         new:
+          back: Volver
           create: "Crear"
           title: "Crear Evento"
-        edit:
-          update: "Actualizar"
-          title: "Editar Evento"
         registration_confirm:
           cancel: Cancelar
           confirm: Confirmar
@@ -137,6 +136,7 @@ es:
           remaining_slots:
             one: 1 inscripción disponible
             other: "%{count} inscripciones disponibles"
+            zero: No quedan inscripciones disponibles
         rendezvouses:
           no_rendezvouses_warning: No hay eventos que coincidan con el criterio de búsqueda o no hay ningún evento programado.
           upcoming_rendezvouses_warning: Actualmente no hay eventos programados, pero puedes ver los eventos anteriores.
