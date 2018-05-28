@@ -1,8 +1,0 @@
-<%=  decidim_form_for(@form, url: rendezvous_registration_path, html: { class: "form edit_rendezvous_registrations" })  do |f| %>
-  <%= render partial: 'form', object: f, locals: {title: t('.title'), rendezvous: @rendezvous}%>
-
-  <div class="button--double form-general-submit">
-    <%= f.submit t(".save") %>
-  </div>
-<% end %>
-
