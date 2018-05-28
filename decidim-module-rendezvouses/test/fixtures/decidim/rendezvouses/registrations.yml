@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  decidim_user: one
-  decidim_rendezvous: one
-
-two:
-  decidim_user: two
-  decidim_rendezvous: two

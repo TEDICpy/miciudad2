@@ -7,7 +7,7 @@ ruby RUBY_VERSION
 gem "decidim", "0.10.1"
 gem "decidim-initiatives", git: "https://github.com/decidim/decidim-initiatives", branch: "master"
 gem "decidim-denuncias", git: "https://github.com/TEDICpy/decidim-reclamos", branch: "development"
-gem "decidim-rendezvouses", path: "decidim-module-rendezvouses"
+gem "decidim-rendezvouses", git: "https://github.com/TEDICpy/decidim-eventos", branch: "development"
 
 gem "puma", "~> 3.0"
 gem "uglifier", "~> 4.1"
