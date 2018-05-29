@@ -1,0 +1,11 @@
+<% if rendezvouses.size > 0 %>
+  <section class="wrapper-home home-section">
+    <div class="row">
+      <h3 class="section-heading"><%= t("decidim.menu.rendezvouses") %></h3>
+      <div id="rendezvouses" class="columns ">
+        <%= render partial: "pages/home/rndz" %>
+      </div>
+    </div>
+  </section>
+  <%= stylesheet_link_tag "decidim/rendezvouses/rendezvouses" %>
+<% end %>

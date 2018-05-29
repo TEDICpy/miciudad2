@@ -1,6 +1,7 @@
 require "active_support/concern"
 module Decidim
   module ViewHooksHelper
+    include Decidim::Rendezvouses::RendezvousesHelper
 
     # Public: Renders all hooks registered as `hook_name`.
     #
@@ -17,6 +18,15 @@ module Decidim
       a = render_initiatives(deep_dup)
       b = render_denuncias(deep_dup)
       [a, b].join("").html_safe
+    end
+
+    def rendezvouses
+      next_rendezvouses(deep_dup)
+    end
+
+    def next_rendezvouses(view_context)
+      search = Decidim::Rendezvouses::RendezvousSearch.new({:date => "upcoming"})
+      next_rendezvouses = search.results
     end
 
     def render_initiatives(view_context)
