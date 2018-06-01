@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/TEDICpy/decidim-reportes
-  revision: 11d39a83d53bef827dffa0807adb7f383f8acf89
+  revision: 8fec02700a4ed01e7de4c8d1e9770a4cd4e72ad2
   branch: development
   specs:
     decidim-denuncias (0.10.1)
