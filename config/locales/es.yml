@@ -22,10 +22,10 @@ es:
         home:
           highlighted_processes:
             active_processes: Activos ahora
-    cookie_warning:
-      description_html: FIXME: mensaje genial sobre las cookies con el %{link} de terminos y condiciones.
-
-
+  layouts:
+    decidim:
+      cookie_warning:
+        description_html: "FIXME: mensaje genial sobre las cookies con el %{link} de terminos y condiciones."
   pages:
       home:
         extended:
