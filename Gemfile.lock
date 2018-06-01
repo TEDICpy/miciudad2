@@ -24,9 +24,9 @@ GIT
       wicked
 
 GIT
-  remote: https://github.com/decidim/decidim-initiatives
-  revision: 276cb0882ded66eafad991b2aefbbe3859e13e9a
-  branch: master
+  remote: https://github.com/diegocrzt/decidim-initiatives
+  revision: 6726324533d6c52e0d98528df8625f38c161cbad
+  branch: development
   specs:
     decidim-initiatives (0.10.0.pre)
       decidim-admin

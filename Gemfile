@@ -5,7 +5,7 @@ source "https://rubygems.org"
 ruby RUBY_VERSION
 
 gem "decidim", "0.10.1"
-gem "decidim-initiatives", git: "https://github.com/decidim/decidim-initiatives", branch: "master"
+gem "decidim-initiatives", git: "https://github.com/diegocrzt/decidim-initiatives", branch: "development"
 gem "decidim-denuncias", git: "https://github.com/TEDICpy/decidim-reportes", branch: "development"
 gem "decidim-rendezvouses", git: "https://github.com/TEDICpy/decidim-eventos", branch: "development"
 
