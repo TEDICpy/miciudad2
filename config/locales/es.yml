@@ -17,13 +17,13 @@ es:
           actions:
             mail_authorization_handler: Verifícate escribiendo tu dirección de correo electrónico
             automatic_authorization_handler: Verifícate automáticamente
-    
-    
     participatory_processes:
       pages:
         home:
           highlighted_processes:
             active_processes: Activos ahora
+    cookie_warning:
+      description_html: FIXME: mensaje genial sobre las cookies con el %{link} de terminos y condiciones.
 
 
   pages:
