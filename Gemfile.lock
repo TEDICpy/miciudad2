@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/TEDICpy/decidim-reportes
-  revision: d8507b24169c36b5fb811f903a6eba55134f34ef
+  revision: 11d39a83d53bef827dffa0807adb7f383f8acf89
   branch: development
   specs:
     decidim-denuncias (0.10.1)
@@ -323,7 +323,7 @@ GEM
     graphiql-rails (1.4.10)
       railties
       sprockets-rails
-    graphql (1.8.0)
+    graphql (1.8.1)
     hashdiff (0.3.7)
     hashie (3.5.7)
     high_voltage (3.0.0)
