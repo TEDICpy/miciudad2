@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180526160038) do
+ActiveRecord::Schema.define(version: 20180606231014) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -412,6 +412,8 @@ ActiveRecord::Schema.define(version: 20180526160038) do
     t.datetime "first_progress_notification_at"
     t.datetime "second_progress_notification_at"
     t.integer "offline_votes"
+    t.string "image2"
+    t.string "image"
     t.index "md5((description)::text)", name: "decidim_initiatives_description_search"
     t.index ["answered_at"], name: "index_decidim_initiatives_on_answered_at"
     t.index ["decidim_author_id"], name: "index_decidim_initiatives_on_decidim_author_id"
