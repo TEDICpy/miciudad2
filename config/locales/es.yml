@@ -7,7 +7,7 @@ es:
     authorization_handlers:
       mail_authorization_handler:
         name: Correo electrónico
-        explanation: Verifica tu identidad con un código enviado a tu dirección de correo electrónico
+        explanation: Verifica tu identidad con el código enviado a tu dirección de correo electrónico
       automatic_authorization_handler:
               name: Autorización automática
               explanation: Verifica tu identidad automáticamente
@@ -25,7 +25,7 @@ es:
   layouts:
     decidim:
       cookie_warning:
-        description_html: "FIXME: mensaje genial sobre las cookies con el %{link} de terminos y condiciones."
+        description_html: "Cuidamos tus datos personales. Lee %{link} de términos y condiciones, y si estás de acuerdo haz clic en el siguiente botón:"
   pages:
       home:
         extended:
