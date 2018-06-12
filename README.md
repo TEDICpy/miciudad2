@@ -1,9 +1,14 @@
-# miciudad2
+# MiCiudad2
 
 Aplicación de Participación Ciudadana y Gobierno Abierto
 
 Este es el repositorio de `miciudad2`, basado en [Decidim](https://github.com/decidim/decidim).
 
+Repositorios complementarios:
+
+* https://github.com/TEDICpy/decidim-initiatives
+* https://github.com/TEDICpy/decidim-reportes
+* https://github.com/TEDICpy/decidim-eventos
 
 ## Dependencias
 
@@ -38,7 +43,7 @@ user.save!
 3. Visitar `<your app url>/system` e iniciar sesión con las credenciales de administrador.
 4. Crear una nueva organización. Verificar la configuración de localización que quiera usar para dicha organización y seleccione una por defecto.
 5. Definir correctamente el nombre de host por defecto para la organización, de ota manera la aplicación podría no funcionar adecuadamente. Note que necesita inclusir cualquier sub dominio que piense usar. 
-6. Complete el resto del formulario y finalize.
+6. Complete el resto del formulario y finalice.
 
 ¡Está listo!
 
