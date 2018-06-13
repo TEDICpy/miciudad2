@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/TEDICpy/decidim-eventos
-  revision: 8f64747f7238d8e57c396943abebfdd4962d117a
+  revision: a74c0b5d65a84014444b2723342fb5b4b24080b7
   branch: development
   specs:
     decidim-rendezvouses (0.10.1)
@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/diegocrzt/decidim-initiatives
-  revision: 6a9ccae87d467168bf54d954e992f9aa9f78e89a
+  revision: 7c94cdc34abe17140ccfe9ad39c6b923734770e5
   branch: development
   specs:
     decidim-initiatives (0.10.0.pre)
@@ -87,7 +87,7 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
     ast (2.4.0)
-    autoprefixer-rails (8.6.0)
+    autoprefixer-rails (8.6.2)
       execjs
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
@@ -323,7 +323,7 @@ GEM
     graphiql-rails (1.4.10)
       railties
       sprockets-rails
-    graphql (1.8.1)
+    graphql (1.8.2)
     hashdiff (0.3.7)
     hashie (3.5.7)
     high_voltage (3.0.0)
