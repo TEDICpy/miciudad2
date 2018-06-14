@@ -7,14 +7,14 @@ GIT
       decidim-core (= 0.10.1)
 
 GIT
-  remote: https://github.com/TEDICpy/decidim-reportes
-  revision: d13907c1c8af12923a41fd15a15d0064291eadd2
+  remote: https://github.com/TEDICpy/decidim-initiatives
+  revision: f898873e7791d8c2e2f0cbf3d2d9a6829cd4abfa
   branch: development
   specs:
-    decidim-denuncias (0.10.1)
+    decidim-initiatives (0.10.0.pre)
       decidim-admin
       decidim-comments
-      decidim-core (~> 0.10.1)
+      decidim-core (~> 0.10.0.pre)
       decidim-verifications
       kaminari (~> 1.0)
       rails (~> 5.1.4)
@@ -24,14 +24,14 @@ GIT
       wicked
 
 GIT
-  remote: https://github.com/diegocrzt/decidim-initiatives
-  revision: 7c94cdc34abe17140ccfe9ad39c6b923734770e5
+  remote: https://github.com/TEDICpy/decidim-reportes
+  revision: d13907c1c8af12923a41fd15a15d0064291eadd2
   branch: development
   specs:
-    decidim-initiatives (0.10.0.pre)
+    decidim-denuncias (0.10.1)
       decidim-admin
       decidim-comments
-      decidim-core (~> 0.10.0.pre)
+      decidim-core (~> 0.10.1)
       decidim-verifications
       kaminari (~> 1.0)
       rails (~> 5.1.4)
@@ -323,11 +323,11 @@ GEM
     graphiql-rails (1.4.10)
       railties
       sprockets-rails
-    graphql (1.8.2)
+    graphql (1.8.3)
     hashdiff (0.3.7)
     hashie (3.5.7)
     high_voltage (3.0.0)
-    highline (1.7.10)
+    highline (2.0.0)
     htmlentities (4.3.4)
     httparty (0.16.2)
       multi_xml (>= 0.5.2)
