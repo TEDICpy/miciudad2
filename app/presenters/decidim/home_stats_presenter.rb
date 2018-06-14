@@ -4,12 +4,14 @@ module Decidim
   # A presenter to render statistics in the homepage.
   class HomeStatsPresenter < Rectify::Presenter
     attribute :organization, Decidim::Organization
+    include Decidim::ViewHooksHelper
 
     # Public: Render a collection of primary stats.
     def highlighted
       highlighted_stats = Decidim.stats.only([:users_count, :processes_count]).with_context(organization).map {|name, data| [name, data]}
       highlighted_stats = highlighted_stats.concat(published_initiatives)
       highlighted_stats = highlighted_stats.concat(published_denuncias)
+      highlighted_stats = highlighted_stats.concat(rendezvouses_count)
       highlighted_stats = highlighted_stats.concat(global_stats(priority: StatsRegistry::HIGH_PRIORITY))
       highlighted_stats = highlighted_stats.concat(feature_stats(priority: StatsRegistry::HIGH_PRIORITY))
       highlighted_stats = highlighted_stats.reject(&:empty?)
@@ -97,6 +99,11 @@ module Decidim
     def published_denuncias
       k = Decidim::Denuncia.where(organization: organization).published.count
       [[:denuncias_count, k]]
+    end
+
+    def rendezvouses_count
+      k = rendezvouses.count
+      [[:eventos_count, k]]
     end
   end
 end
