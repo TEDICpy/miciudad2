@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/TEDICpy/decidim-initiatives
-  revision: f898873e7791d8c2e2f0cbf3d2d9a6829cd4abfa
+  revision: ace7d95204c5fb59fc03360a15725b34a3eadf36
   branch: development
   specs:
     decidim-initiatives (0.10.0.pre)
