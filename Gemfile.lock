@@ -1,15 +1,15 @@
 GIT
   remote: https://github.com/TEDICpy/decidim-eventos
-  revision: 2a08a6ca2bec6faf4370eeb1c445ca6b02ed5221
-  branch: development
+  revision: 3861a2a54ebe97b3b3e773e01a81c19d8b494f31
+  branch: master
   specs:
     decidim-rendezvouses (0.10.1)
       decidim-core (= 0.10.1)
 
 GIT
   remote: https://github.com/TEDICpy/decidim-initiatives
-  revision: ace7d95204c5fb59fc03360a15725b34a3eadf36
-  branch: development
+  revision: 377b2516a031acefec67e978ebfb9ec507cbfdaa
+  branch: master
   specs:
     decidim-initiatives (0.10.0.pre)
       decidim-admin
@@ -25,8 +25,8 @@ GIT
 
 GIT
   remote: https://github.com/TEDICpy/decidim-reportes
-  revision: 13611612ef96d7f7bda7d27e894677a716dc7f80
-  branch: development
+  revision: 8434db508fb78374b33cda6c6e8f34d5888727f5
+  branch: master
   specs:
     decidim-denuncias (0.10.1)
       decidim-admin
