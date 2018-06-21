@@ -1,0 +1,38 @@
+es:
+  activemodel:
+    attributes:
+      mail_authorization_handler:
+        verification_code: Código de verificación
+  decidim:
+    authorization_handlers:
+      mail_authorization_handler:
+        name: Correo electrónico
+        explanation: Verifica tu identidad con un código enviado a tu dirección de correo electrónico
+      automatic_authorization_handler:
+              name: Autorización automática
+              explanation: Verifica tu identidad automáticamente
+    verifications:
+      authorizations:
+        first_login:
+          actions:
+            mail_authorization_handler: Verifícate escribiendo tu dirección de correo electrónico
+            automatic_authorization_handler: Verifícate automáticamente
+    participatory_processes:
+      pages:
+        home:
+          highlighted_processes:
+            active_processes: Activos ahora
+  layouts:
+    decidim:
+      cookie_warning:
+        description_html: "FIXME: mensaje genial sobre las cookies con el %{link} de terminos y condiciones."
+  pages:
+      home:
+        extended:
+          debates: Discusiones
+          debates_explanation: Espacios para informarse y decidir sobre las propuestas de cada proceso.
+          proposals_explanation: Hacé propuestas, apoyá las existentes y promové los cambios que queres ver.
+        statistics:
+          initiatives_count: Iniciativas
+          denuncias_count: Reportes
+          eventos_count: Eventos

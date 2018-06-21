@@ -1,0 +1,20 @@
+<%= render partial: 'pages/home/hero' %>
+
+<% if !translated_attribute(current_organization.description).blank? %>
+  <%= render partial: 'pages/home/sub_hero' %>
+<% end %>
+
+<%= render partial: "pages/home/highlighted_content_banner" %>
+
+<%= render partial: 'pages/home/custom_highlight' %>
+
+<%= render partial: 'pages/home/custom_rendezvouses' %>
+
+<% if current_organization.show_statistics? %>
+  <%= render partial: 'pages/home/statistics' %>
+<% end %>
+
+<%= render partial: 'pages/home/extended' %>
+
+
+<%= render partial: 'pages/home/footer_sub_hero' %>
