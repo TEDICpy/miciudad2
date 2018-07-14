@@ -102,7 +102,7 @@ module Decidim
     end
 
     def rendezvouses_count
-      k = rendezvouses.count
+      k = rendezvouses_all.count
       [[:eventos_count, k]]
     end
   end

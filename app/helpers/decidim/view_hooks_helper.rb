@@ -24,9 +24,18 @@ module Decidim
       next_rendezvouses(deep_dup)
     end
 
+    def rendezvouses_all
+      all_rendezvouses(deep_dup)
+    end
+
     def next_rendezvouses(view_context)
       search = Decidim::Rendezvouses::RendezvousSearch.new({:date => "upcoming"})
-      next_rendezvouses = search.results
+      search.results
+    end
+
+    def all_rendezvouses(view_context)
+      search = Decidim::Rendezvouses::RendezvousSearch.new({})
+      search.results
     end
 
     def render_initiatives(view_context)

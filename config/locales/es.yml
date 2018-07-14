@@ -11,6 +11,10 @@ es:
       automatic_authorization_handler:
               name: Autorización automática
               explanation: Verifica tu identidad automáticamente
+    devise:
+      registrations:
+        new:
+          newsletter: Quiero recibir un boletín ocasional con información relevante.
     verifications:
       authorizations:
         first_login:
