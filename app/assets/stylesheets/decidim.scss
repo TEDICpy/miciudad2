@@ -165,6 +165,10 @@ a.hero-cta.button.expanded.large.button--sc {
 
 }
 
+
+.wrapper-home.odd {
+    background: white;
+}
 .hero::after {
    
      background-color: transparent;// rgba(26, 24, 29, 0.6); 
@@ -174,8 +178,17 @@ a.hero-cta.button.expanded.large.button--sc {
     padding: 4rem 0;
     text-align: center;
     background: white;
-    padding-bottom: 5rem;
+    padding-bottom: 6rem;
+    background-image: url(/assets/ciudad-encarnacion.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+  //  height: 250px;
 
+}
+
+.subheroe {
+    padding: 2rem 0;
+    padding-bottom: 6rem;
 }
 
 .main-nav__link a {
