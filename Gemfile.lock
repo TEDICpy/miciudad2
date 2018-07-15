@@ -1,12 +1,4 @@
 GIT
-  remote: https://github.com/TEDICpy/decidim-eventos
-  revision: 3861a2a54ebe97b3b3e773e01a81c19d8b494f31
-  branch: master
-  specs:
-    decidim-rendezvouses (0.10.1)
-      decidim-core (= 0.10.1)
-
-GIT
   remote: https://github.com/TEDICpy/decidim-initiatives
   revision: 377b2516a031acefec67e978ebfb9ec507cbfdaa
   branch: master
@@ -39,6 +31,12 @@ GIT
       social-share-button (~> 1.0)
       truncato
       wicked
+
+PATH
+  remote: ../decidim-eventos
+  specs:
+    decidim-rendezvouses (0.10.1)
+      decidim-core (= 0.10.1)
 
 GEM
   remote: https://rubygems.org/
@@ -643,7 +641,7 @@ DEPENDENCIES
   web-console (~> 3.5)
 
 RUBY VERSION
-   ruby 2.4.4p296
+   ruby 2.5.0p0
 
 BUNDLED WITH
    1.16.1

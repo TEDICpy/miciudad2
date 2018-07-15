@@ -167,7 +167,7 @@ a.hero-cta.button.expanded.large.button--sc {
 
 
 .wrapper-home.odd {
-    background: white;
+    background: white   ;
 }
 .hero::after {
    
@@ -178,11 +178,20 @@ a.hero-cta.button.expanded.large.button--sc {
     padding: 4rem 0;
     text-align: center;
     background: white;
+    padding-bottom: 5rem;
+
+}
+
+.footer__subhero {
+
+    padding: 4rem 0;
+    text-align: center;
+    background: white;
     padding-bottom: 6rem;
-    background-image: url(/assets/ciudad-encarnacion.png);
+    background-image: url("/assets/ciudad-encarnacion.png");
     background-repeat: no-repeat;
     background-position: bottom;
-  //  height: 250px;
+
 
 }
 
@@ -252,7 +261,21 @@ a.hero-cta.button.expanded.large.button--sc {
     .section-heading {
         text-align: center;
         font-size: 2em;
+        color: $secondary;
     }
+
+    .heading2 {
+        text-align: center;
+        font-size: 2em;
+        color: $primary;
+        font-weight: bold;
+    }
+
+    .heading6 {
+        color: $secondary   
+    }
+
+    
 
 
 }
