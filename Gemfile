@@ -5,10 +5,11 @@ source "https://rubygems.org"
 ruby RUBY_VERSION
 
 gem "decidim", "0.10.1"
-gem "decidim-initiatives", git: "https://github.com/TEDICpy/decidim-initiatives", branch: "master"
-gem "decidim-denuncias", git: "https://github.com/TEDICpy/decidim-reportes", branch: "master"
-#gem "decidim-rendezvouses", git: "https://github.com/TEDICpy/decidim-eventos", branch: "master"
-gem "decidim-rendezvouses", path:"../decidim-eventos"
+
+gem "decidim-initiatives", git: "https://github.com/TEDICpy/decidim-initiatives", branch: "development"
+gem "decidim-denuncias", git: "https://github.com/TEDICpy/decidim-reportes", branch: "development"
+gem "decidim-rendezvouses", git: "https://github.com/TEDICpy/decidim-eventos", branch: "development"
+
 gem "puma", "~> 3.0"
 gem "uglifier", "~> 4.1"
 
