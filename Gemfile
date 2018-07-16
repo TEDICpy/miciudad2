@@ -12,6 +12,7 @@ gem "decidim-rendezvouses", git: "https://github.com/TEDICpy/decidim-eventos", b
 
 gem "puma", "~> 3.0"
 gem "uglifier", "~> 4.1"
+gem "high_voltage", "~> 3.0.0"
 
 gem "faker", "~> 1.8"
 
