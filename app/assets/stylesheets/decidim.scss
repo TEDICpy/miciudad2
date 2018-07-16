@@ -279,6 +279,38 @@ a.hero-cta.button.expanded.large.button--sc {
 
 
 }
+.home-pam__data{
+
+.home-pam__lowlight &{
+    padding: 1rem 2rem;
+
+    @include breakpoint(medium){
+      width: 50%;
+      border-bottom: $border;
+      border-right: $border;
+    }
+
+    &:last-child{
+      border-right: none;
+    }
+  }
+}
+
+.home-pam__lowlight{
+    @include breakpoint(medium){
+      display: flex;
+    }
+  }
+
+  .home-pam__number{
+    font-size: 1.2rem;
+    font-weight: 800;
+  
+    .home-pam__lowlight &{
+      font-size: 4rem;
+      line-height: 1;
+    }
+  }
 
 
 .wrapper-home {
