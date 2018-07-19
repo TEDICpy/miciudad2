@@ -9,8 +9,8 @@ es:
         name: Correo electrónico
         explanation: Verifica tu identidad con un código enviado a tu dirección de correo electrónico
       automatic_authorization_handler:
-              name: Autorización automática
-              explanation: Verifica tu identidad automáticamente
+        name: Autorización automática
+        explanation: Verifica tu identidad automáticamente
     verifications:
       authorizations:
         first_login:
