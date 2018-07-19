@@ -39,9 +39,6 @@ en:
         mail_authorization_handler:
           name: E-mail
           explanation: Verify your identity with a code sent to your e-mail address
-        mail_authorization_handler:
-          name: Automatic Authorization
-          explanation: Verify your identity automatically
       verifications:
             authorizations:
               first_login:
