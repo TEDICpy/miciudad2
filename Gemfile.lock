@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/TEDICpy/decidim-initiatives
-  revision: c2d46e080fff3b2508f8eb795d583f1f150b9fcc
+  revision: 7875c5e51863824be0f6cb83486d064e596756c7
   branch: development
   specs:
     decidim-initiatives (0.10.0.pre)
@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/TEDICpy/decidim-reportes
-  revision: 53099c17ea240b83b2d02732c690e5f7f855922d
+  revision: 5c7c1aabb30355caba51a8edb12ec5f4d348d86e
   branch: development
   specs:
     decidim-denuncias (0.10.1)
@@ -320,7 +320,7 @@ GEM
     geocoder (1.4.9)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    graphiql-rails (1.4.10)
+    graphiql-rails (1.4.11)
       railties
       sprockets-rails
     graphql (1.8.5)
