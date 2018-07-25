@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/TEDICpy/decidim-initiatives
-  revision: 377b2516a031acefec67e978ebfb9ec507cbfdaa
+  revision: 6929a3973723d0b3ef661999d77da9a1b7374c80
   branch: master
   specs:
     decidim-initiatives (0.10.0.pre)
@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/TEDICpy/decidim-reportes
-  revision: 8434db508fb78374b33cda6c6e8f34d5888727f5
+  revision: 76d48f50c04112cfc2306243130e3a0d97bc0ac0
   branch: master
   specs:
     decidim-denuncias (0.10.1)
@@ -87,7 +87,7 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
     ast (2.4.0)
-    autoprefixer-rails (8.6.3)
+    autoprefixer-rails (8.6.5)
       execjs
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
@@ -109,7 +109,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (>= 2.0, < 4.0)
-    carrierwave (1.2.2)
+    carrierwave (1.2.3)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
@@ -197,7 +197,7 @@ GEM
       foundation-rails (~> 6.4, < 6.5)
       foundation_rails_helper (~> 3.0)
       geocoder (~> 1.4)
-      high_voltage (~> 3.0.0)
+      high_voltage (~> 3.0)
       invisible_captcha (~> 0.10.0)
       jquery-rails (~> 4.3)
       mini_magick (~> 4.8)
@@ -281,7 +281,7 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
-    devise-i18n (1.6.2)
+    devise-i18n (1.6.4)
       devise (>= 4.4)
     devise_invitable (1.7.4)
       actionmailer (>= 4.1.0)
@@ -299,7 +299,7 @@ GEM
     factory_bot_rails (4.10.0)
       factory_bot (~> 4.10.0)
       railties (>= 3.0.0)
-    faker (1.8.7)
+    faker (1.9.1)
       i18n (>= 0.7)
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
@@ -320,10 +320,10 @@ GEM
     geocoder (1.4.9)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    graphiql-rails (1.4.10)
+    graphiql-rails (1.4.11)
       railties
       sprockets-rails
-    graphql (1.8.4)
+    graphql (1.8.5)
     hashdiff (0.3.7)
     hashie (3.5.7)
     high_voltage (3.0.0)
@@ -396,7 +396,7 @@ GEM
     multi_xml (0.6.0)
     multipart-post (2.0.0)
     nio4r (2.3.1)
-    nokogiri (1.8.3)
+    nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
     oauth (0.5.4)
     oauth2 (1.4.0)
@@ -428,7 +428,7 @@ GEM
       activerecord (>= 4.2, < 5.2)
       request_store (~> 1.1)
     parallel (1.12.1)
-    parser (2.5.1.0)
+    parser (2.5.1.2)
       ast (~> 2.4.0)
     pg (1.0.0)
     polyamorous (1.3.3)
@@ -442,10 +442,10 @@ GEM
       actionmailer (>= 3, < 6)
       premailer (~> 1.7, >= 1.7.9)
     public_suffix (3.0.2)
-    puma (3.11.4)
+    puma (3.12.0)
     rack (2.0.5)
     rack-cors (1.0.2)
-    rack-test (1.0.0)
+    rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.1.6)
       actioncable (= 5.1.6)
@@ -539,8 +539,7 @@ GEM
     rubyzip (1.2.1)
     safe_yaml (1.0.4)
     sass (3.4.25)
-    sassc (1.11.4)
-      bundler
+    sassc (1.12.1)
       ffi (~> 1.9.6)
       sass (>= 3.3.0)
     sassc-rails (1.3.0)
@@ -551,7 +550,7 @@ GEM
       sprockets-rails
       tilt
     searchlight (4.1.0)
-    selenium-webdriver (3.12.0)
+    selenium-webdriver (3.13.1)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
     simplecov (0.16.1)
@@ -590,7 +589,7 @@ GEM
       nokogiri (~> 1.8.0, >= 1.7.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    uglifier (4.1.12)
+    uglifier (4.1.16)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.4.0)
     url (0.3.2)
@@ -616,7 +615,7 @@ GEM
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
-    wicked (1.3.2)
+    wicked (1.3.3)
       railties (>= 3.0.7)
     wisper (2.0.0)
     wisper-rspec (1.1.0)
