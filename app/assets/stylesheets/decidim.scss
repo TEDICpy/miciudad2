@@ -30,6 +30,14 @@ h1, h2, h3, h4 {
     font-family: 'Alegreya Sans SC', sans-serif !important;
 }
 
+.card__title {
+  font-family: 'Alegreya Sans SC', sans-serif !important;
+  font-size:32px;
+  color:$secondary;
+  font-weight: bold;
+
+}
+
 
 
 .title-bar {
@@ -140,6 +148,11 @@ a.hero-cta.button.expanded.large.button--sc {
     }
 }
 
+.section-heading hr {
+    margin-top: 0px;
+    width: 30%;
+}
+
 #highlighted-processes {
     h3 hr {
         margin-top: 0px;
@@ -157,6 +170,10 @@ a.hero-cta.button.expanded.large.button--sc {
 
 }
 
+
+.wrapper-home.odd {
+    background: white   ;
+}
 .hero::after {
    
      background-color: transparent;// rgba(26, 24, 29, 0.6); 
@@ -168,6 +185,24 @@ a.hero-cta.button.expanded.large.button--sc {
     background: white;
     padding-bottom: 5rem;
 
+}
+
+.footer__subhero {
+
+    padding: 4rem 0;
+    text-align: center;
+    background: white;
+    padding-bottom: 6rem;
+    background-image: url("/assets/ciudad-encarnacion.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+
+
+}
+
+.subheroe {
+    padding: 2rem 0;
+    padding-bottom: 6rem;
 }
 
 .main-nav__link a {
@@ -231,10 +266,56 @@ a.hero-cta.button.expanded.large.button--sc {
     .section-heading {
         text-align: center;
         font-size: 2em;
+        color: $secondary;
     }
+
+    .heading2 {
+        text-align: center;
+        font-size: 2em;
+        color: $secondary;
+        font-weight: bold;
+    }
+
+    .heading6 {
+        color: $secondary   
+    }
+
+    
 
 
 }
+.home-pam__data{
+
+.home-pam__lowlight &{
+    padding: 1rem 2rem;
+
+    @include breakpoint(medium){
+      width: 50%;
+      border-bottom: $border;
+      border-right: $border;
+    }
+
+    &:last-child{
+      border-right: none;
+    }
+  }
+}
+
+.home-pam__lowlight{
+    @include breakpoint(medium){
+      display: flex;
+    }
+  }
+
+  .home-pam__number{
+    font-size: 1.2rem;
+    font-weight: 800;
+  
+    .home-pam__lowlight &{
+      font-size: 4rem;
+      line-height: 1;
+    }
+  }
 
 
 .wrapper-home {

@@ -9,8 +9,12 @@ es:
         name: Correo electrónico
         explanation: Verifica tu identidad con el código enviado a tu dirección de correo electrónico
       automatic_authorization_handler:
-              name: Autorización automática
-              explanation: Verifica tu identidad automáticamente
+        name: Autorización automática
+        explanation: Verifica tu identidad automáticamente
+    devise:
+      registrations:
+        new:
+          newsletter: Quiero recibir un boletín ocasional con información relevante.
     verifications:
       authorizations:
         first_login:
@@ -35,3 +39,4 @@ es:
         statistics:
           initiatives_count: Iniciativas
           denuncias_count: Reportes
+          eventos_count: Eventos

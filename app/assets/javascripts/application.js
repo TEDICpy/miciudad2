@@ -13,3 +13,4 @@
 //= require rails-ujs
 //= require_tree .
 //= require decidim
+//= require datepicker-locales/foundation-datepicker.es
