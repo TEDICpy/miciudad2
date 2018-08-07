@@ -29,7 +29,7 @@ es:
   layouts:
     decidim:
       cookie_warning:
-        description_html: "FIXME: mensaje genial sobre las cookies con el %{link} de terminos y condiciones."
+        description_html: "Utilizamos «cookies» para mejorar la experiencia. Lee %{link} nuestros términos y condiciones."
   pages:
       home:
         extended:
