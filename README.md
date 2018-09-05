@@ -245,3 +245,7 @@ esquina superior derecha de la pantalla
 
 ¡Está listo!
 
+### Cosas que hacer después de instalar
+
+* Agregar Piwik/Matomo (estadísticas): Editar el archivo: `app/views/layouts/decidim/_head_extra.html.erb` y pegar el código de Matomo
+* Agregar tarea CRON (procesamiento periódico): Ver carpeta `util` en la raíz de la app
