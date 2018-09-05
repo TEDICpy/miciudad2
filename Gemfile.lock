@@ -78,6 +78,12 @@ GEM
       activemodel (= 5.1.6)
       activesupport (= 5.1.6)
       arel (~> 8.0)
+    activerecord-session_store (1.1.1)
+      actionpack (>= 4.0)
+      activerecord (>= 4.0)
+      multi_json (~> 1.11, >= 1.11.2)
+      rack (>= 1.5.2, < 3)
+      railties (>= 4.0)
     activesupport (5.1.6)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
@@ -626,6 +632,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-session_store
   byebug (~> 10.0)
   decidim (= 0.10.1)
   decidim-denuncias!
@@ -643,7 +650,7 @@ DEPENDENCIES
   web-console (~> 3.5)
 
 RUBY VERSION
-   ruby 2.4.4p296
+   ruby 2.4.1p111
 
 BUNDLED WITH
    1.16.1

@@ -10,6 +10,8 @@ gem "decidim-initiatives", git: "https://github.com/TEDICpy/decidim-initiatives"
 gem "decidim-denuncias", git: "https://github.com/TEDICpy/decidim-reportes", branch: "development"
 gem "decidim-rendezvouses", git: "https://github.com/TEDICpy/decidim-eventos", branch: "development"
 
+gem "activerecord-session_store" 
+
 gem "puma", "~> 3.0"
 gem "uglifier", "~> 4.1"
 gem "high_voltage", "~> 3.0.0"
