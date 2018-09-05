@@ -1,9 +1,9 @@
 // // Variables
 // 
-$primary:#E5E57D;
+$primary:#D9EA54;
  $secondary: #495A6C;
- $verdeClaro2: #ABC17A;
- $grisLetra: #7A7D85;
+ $verdeClaro2: #82d066;
+ $grisLetra: #697279;
 // $success: #57d685;
 // $warning: #ffae00;
 // $alert: #ec5840;
@@ -214,6 +214,7 @@ a.hero-cta.button.expanded.large.button--sc {
    
     padding: 0.2rem;
     font-size: 1em;
+    color: $grisLetra; 
 }
 
 
