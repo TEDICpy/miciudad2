@@ -216,7 +216,6 @@ service apache2 restart
 
 ## Configuración Inicial
 
-
 ### Crear la cuenta de Administrador del sistema
  
 * Abrir la consola de rails en el servidor: `bundle exec rails console`
@@ -233,6 +232,10 @@ funcionar adecuadamente. Note que necesita incluir cualquier sub dominio que pie
 * Complete el resto del formulario y finalice. Ahora está disponible el sitio para la organización que se acaba de crear.
 Se pueden crear tantas organizaciones como dominios se dispongan, y cada organización tendrá sus propios usuarios.
 * En el contexto de `MiCiudad2` Una organización es equivalente a una municipalidad.
+
+### Mantenimiento de la base de datos de sesiones
+
+* Correr diaariamente `rake db:sessions:trim` para eliminar las sesiones viejas.
 
 
 ### Acceder al sitio de una organización/municipalidad
