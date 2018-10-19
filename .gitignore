@@ -24,7 +24,9 @@
 
 # Ignore public uploads
 public/uploads
+public/assets
 
 # Ignore idea files
 .idea/*
 *.iml
+
