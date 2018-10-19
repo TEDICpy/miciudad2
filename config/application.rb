@@ -17,3 +17,4 @@ module Miciudad2
   end
 end
 ActiveRecord::SessionStore::Session.serializer = :hybrid
+
