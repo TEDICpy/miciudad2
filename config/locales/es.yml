@@ -29,11 +29,7 @@ es:
   layouts:
     decidim:
       cookie_warning:
-<<<<<<< HEAD
         description_html: "Cuidamos tus datos personales. Lee %{link} de términos y condiciones, y si estás de acuerdo haz clic en el siguiente botón:"
-=======
-        description_html: "Utilizamos «cookies» para mejorar la experiencia. Lee %{link} nuestros términos y condiciones."
->>>>>>> b4de6ba6063d1151ba2b0183740539a3d0b11c19
   pages:
       home:
         extended:
