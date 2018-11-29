@@ -46,7 +46,7 @@ module Decidim
                 :official_img_footer,
                 :homepage_image,
                 :logo,
-                file_size: {less_than_or_equal_to: ->(_record) {Decidim.maximum_attachment_size}},
+                file_size: {less_than_or_equal_to: ->(_record) {Decidim.maximum_attachment_size}}, 
                 file_content_type: {allow: ["image/jpeg", "image/png"]}
 
       validates :highlighted_content_banner_action_url, presence: true, if: :highlighted_content_banner_enabled?
