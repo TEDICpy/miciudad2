@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/TEDICpy/decidim-eventos
-  revision: a18375a361a405805a171b4712a40f9ba044a840
+  revision: 3fda886fd38bdaf0618a0825c01598d3b7d2891a
   branch: master
   specs:
     decidim-rendezvouses (0.10.1)
@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/TEDICpy/decidim-initiatives
-  revision: b0d925754aa7afdd6264c32f15c8410d78493fbb
+  revision: 87f4b38ed16097033542781ed022c2f1b4802f24
   branch: master
   specs:
     decidim-initiatives (0.10.0.pre)
@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/TEDICpy/decidim-reportes
-  revision: 8620f1c00204f572f4f8691d6f40c0cf2f707001
+  revision: fe8717e94bae841d56598c7aea31db86b792de8e
   branch: master
   specs:
     decidim-denuncias (0.10.1)
@@ -649,4 +649,4 @@ RUBY VERSION
    ruby 2.4.1p111
 
 BUNDLED WITH
-   1.16.3
+   2.0.1
