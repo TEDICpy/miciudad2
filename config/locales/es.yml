@@ -33,9 +33,12 @@ es:
   pages:
       home:
         extended:
-          debates: Discusiones
-          debates_explanation: Espacios para informarse y decidir sobre las propuestas de cada proceso.
-          proposals_explanation: Hacé propuestas, apoyá las existentes y promové los cambios que queres ver.
+          initiatives: Iniciativas
+          initiatives_explanation: Realizá propuestas que pueden ser apoyadas por muchas personas para que finalmente se conviertan en realidad
+          reports: Reportes
+          reports_explanation: Contribuí reportando los problemas de la ciudad para que la Municipalidad pueda priorizar y mejorar cada vez más nuestro entorno
+          events: Eventos
+          events_explanation: Proponé eventos populares y gratuitos para habitar nuestra ciudad
         statistics:
           initiatives_count: Iniciativas
           denuncias_count: Reportes
