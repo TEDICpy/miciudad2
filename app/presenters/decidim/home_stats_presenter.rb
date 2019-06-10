@@ -70,10 +70,19 @@ module Decidim
         if name == :empty
           "&nbsp;".html_safe
         else
-          safe_join([
+        #  if name == "denuncias_count"
+	#	content_tag :a,:href => "denuncias" do
+ 	#  elsif name == "eventos_count"
+	#	content_tag :a,:href => "eventos" do
+	#  else 
+	#	content_tag :a,:href => "#"  do
+	#  end
+	   content_tag :a,:href => I18n.t(name, scope: "pages.home.statistics").downcase do
+             safe_join([	
                         content_tag(:h4, I18n.t(name, scope: "pages.home.statistics"), class: "home-pam__title"),
                         content_tag(:span, " #{number_with_delimiter(data)}", class: "home-pam__number #{name}")
                     ])
+          end
         end
       end
     end
