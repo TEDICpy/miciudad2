@@ -6,18 +6,20 @@
     <div class="row small-up-1 medium-up-3 home-bullets">
       <div class="column">
         <div class="home-bullet">
+          <%= link_to "/iniciativas" do %>
           <div class="home-bullet__icon">
-            
-<%= image_tag "icon3.png" %>
+            <%= image_tag "icon3.png" %>
           </div>
           <div class="home-bullet__desc">
             <h4 class="heading6"><%= t(".initiatives") %></h4>
             <p><%= t(".initiatives_explanation") %></p>
           </div>
+          <% end %>
         </div>
       </div>
       <div class="column">
         <div class="home-bullet">
+          <%= link_to "/reportes" do %>
           <div class="home-bullet__icon">
           <%= image_tag "icon2.png" %>
           </div>
@@ -25,10 +27,12 @@
             <h4 class="heading6"><%= t(".reports") %></h4>
             <p><%= t(".reports_explanation") %></p>
           </div>
+          <% end %>
         </div>
       </div>
       <div class="column">
         <div class="home-bullet">
+          <%= link_to "/eventos" do %>
           <div class="home-bullet__icon">
           <%= image_tag "icon1.png" %>
           </div>
@@ -36,6 +40,7 @@
             <h4 class="heading6"><%= t(".events") %></h4>
             <p><%= t(".events_explanation") %></p>
           </div>
+          <% end %>
         </div>
       </div>
     </div>
