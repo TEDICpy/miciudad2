@@ -12,7 +12,7 @@ gem "decidim-rendezvouses", git: "https://github.com/TEDICpy/decidim-eventos", b
 
 gem "activerecord-session_store" 
 
-gem "puma", "~> 3.0"
+gem "puma", "~> 3.12"
 gem "uglifier", "~> 4.1"
 gem "high_voltage", "~> 3.0.0"
 
